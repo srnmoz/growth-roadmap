@@ -1,839 +1,680 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<title>CookieYes · Growth - Team 1 Roadmap FY2026–27</title>
-<link href="_ds/cookieyes-design-system-ea9e50a1-c6df-45ca-88a1-76831a816630/colors_and_type.css" rel="stylesheet"/>
-<link href="_ds/cookieyes-design-system-ea9e50a1-c6df-45ca-88a1-76831a816630/styles.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<script src="_ds/cookieyes-design-system-ea9e50a1-c6df-45ca-88a1-76831a816630/_ds_bundle.js"></script>
-<style>
-    html,body{margin:0;padding:0;background:#F4F5F7}
+  <title>CookieYes · Growth - Team 1 Roadmap FY2026–27</title>
+  <link rel="stylesheet" href="_ds/cookieyes-design-system-ea9e50a1-c6df-45ca-88a1-76831a816630/colors_and_type.css">
+  <link rel="stylesheet" href="_ds/cookieyes-design-system-ea9e50a1-c6df-45ca-88a1-76831a816630/styles.css">
+  <script src="_ds/cookieyes-design-system-ea9e50a1-c6df-45ca-88a1-76831a816630/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;padding:0;background:#F6F8FA}
     body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     a{color:#1863DC;text-decoration:none}
     a:hover{color:#134FB0;text-decoration:underline}
     summary::-webkit-details-marker{display:none}
     details[open] > summary .cy-chev{transform:rotate(90deg)}
     details > summary:focus-visible{outline:2px solid #1863DC;outline-offset:-2px}
-
-    .cy-tabs{margin-top:30px}
-    .cy-tab-input{position:absolute;opacity:0;pointer-events:none}
-    .cy-tab-labels{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px;padding:6px;background:#fff;border:1px solid #E9E9EB;border-radius:14px;position:sticky;top:12px;z-index:40;box-shadow:0 10px 28px -20px rgba(39,40,60,.35)}
-    .cy-tab-label{cursor:pointer;border-radius:10px;padding:10px 16px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:#525363;line-height:1.2;transition:all 150ms ease}
-    .cy-tab-label span{display:block;font-family:'Inter',system-ui,sans-serif;font-size:11.5px;font-weight:400;color:#686876;margin-top:3px}
-    #tab-concise:checked ~ .cy-tab-labels label[for="tab-concise"],#tab-detailed:checked ~ .cy-tab-labels label[for="tab-detailed"],#tab-okrs:checked ~ .cy-tab-labels label[for="tab-okrs"]{background:#1863DC;color:#fff;box-shadow:0 6px 18px -8px rgba(24,99,220,.55)}
-    #tab-concise:checked ~ .cy-tab-labels label[for="tab-concise"] span,#tab-detailed:checked ~ .cy-tab-labels label[for="tab-detailed"] span,#tab-okrs:checked ~ .cy-tab-labels label[for="tab-okrs"] span{color:#D1E0F8}
-    .cy-tab-panel{display:none}
-    #tab-concise:checked ~ .cy-tab-content .cy-concise-panel,#tab-detailed:checked ~ .cy-tab-content .cy-detailed-panel,#tab-okrs:checked ~ .cy-tab-content .cy-okr-panel{display:block}
-    .cy-brief-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .cy-brief-card{background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:16px 18px;min-height:120px}
-    .cy-brief-card h3{font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;line-height:1.25;color:#27283C;margin:0 0 7px}
-    .cy-brief-card p{margin:0;color:#525363;font-size:13px;line-height:1.55}
-    .cy-owner{display:inline-block;margin-top:10px;font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;color:#1863DC;background:#ECF3FC;border-radius:9999px;padding:3px 9px}
-    .cy-summary-band{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;margin:14px 0 18px}
-    .cy-summary-hero{background:#1863DC;color:#fff;border-radius:14px;padding:20px 22px;box-shadow:0 8px 28px -8px rgba(24,99,220,.25)}
-    .cy-summary-hero h2{font-family:'Poppins',sans-serif;font-size:26px;font-weight:600;line-height:1.2;margin:0 0 8px;color:#fff}
-    .cy-summary-hero p{font-size:14px;line-height:1.6;margin:0;color:#ECF3FC}
-    .cy-summary-side{background:#fff;border:1px solid #D1E0F8;border-radius:14px;padding:18px}
-    .cy-summary-side h3{font-family:'Poppins',sans-serif;font-size:15px;margin:0 0 8px;color:#27283C}
-    .cy-summary-side ul,.cy-readable-list{margin:0;padding:0;list-style:none}
-    .cy-summary-side li,.cy-readable-list li{padding:7px 0;border-bottom:1px solid #F4F5F7;color:#525363;font-size:13px;line-height:1.5}
-    .cy-summary-side li:last-child,.cy-readable-list li:last-child{border-bottom:0}
-    .cy-readable-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
-    .cy-readable-box{background:#fff;border:1px solid #E9E9EB;border-radius:10px;padding:12px 13px;color:#525363;font-size:12.8px;line-height:1.55}
-    .cy-readable-box b{display:block;color:#27283C;margin-bottom:6px;font-family:'Poppins',sans-serif;font-size:13px}
-    .cy-pill-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
-    .cy-pill{display:inline-flex;align-items:center;border:1px solid #D1E0F8;background:#fff;border-radius:9999px;padding:4px 9px;font-size:12px;color:#525363;line-height:1.35}
-
-    .cy-track-grid{display:grid;grid-template-columns:1.25fr .95fr;gap:16px;margin:24px 0 24px;align-items:stretch}
-    .cy-track-card{position:relative;border-radius:18px;padding:20px 22px;background:#fff;border:1px solid #E9E9EB;box-shadow:0 12px 32px -24px rgba(39,40,60,.45);overflow:hidden}
-    .cy-track-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:#1863DC}
-    .cy-track-card.primary{background:linear-gradient(135deg,#1863DC 0%,#134FB0 100%);border-color:#1863DC;color:#fff;box-shadow:0 18px 42px -24px rgba(24,99,220,.7)}
-    .cy-track-card.primary::before{background:#78DFAF}
-    .cy-track-card.support{background:#F1F6FD;border-color:#D1E0F8}
-    .cy-track-card.support::before{background:#57BABD}
-    .cy-track-badge{display:inline-flex;align-items:center;gap:7px;font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:9999px;padding:5px 10px;margin-bottom:12px;line-height:1.2}
-    .cy-track-card.primary .cy-track-badge{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.24)}
-    .cy-track-card.support .cy-track-badge{background:#fff;color:#1863DC;border:1px solid #D1E0F8}
-    .cy-track-card h3{font-family:'Poppins',sans-serif;font-size:21px;font-weight:600;letter-spacing:-.15px;line-height:1.2;margin:0 0 8px;color:#27283C}
-    .cy-track-card.primary h3{color:#fff}
-    .cy-track-card p{margin:0;color:#525363;font-size:13.5px;line-height:1.6}
-    .cy-track-card.primary p{color:#ECF3FC}
-    .cy-track-lane-list{display:grid;gap:8px;margin-top:14px}
-    .cy-track-lane{display:flex;gap:9px;align-items:flex-start;padding:9px 10px;border-radius:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);font-size:12.5px;line-height:1.45;color:#fff}
-    .cy-track-card.support .cy-track-lane{background:#fff;border-color:#D1E0F8;color:#525363}
-    .cy-track-code{font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;border-radius:9999px;padding:2px 7px;background:#fff;color:#1863DC;flex:none}
-    .cy-track-card.support .cy-track-code{background:#ECF3FC;color:#1863DC}
-    .cy-track-a-box{margin:38px 0 34px;border:2px solid #1863DC;border-radius:20px;background:#ECF3FC;box-shadow:0 18px 42px -32px rgba(24,99,220,.65);overflow:hidden}
-    .cy-track-a-head{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:linear-gradient(135deg,#1863DC 0%,#134FB0 100%);padding:22px 24px;color:#fff}
-    .cy-track-a-meta{font-family:'Fira Code',monospace;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#D1E0F8;margin-bottom:7px}
-    .cy-track-a-head h2{font-family:'Poppins',sans-serif;font-size:28px;font-weight:600;letter-spacing:-.25px;line-height:1.15;color:#fff;margin:0 0 7px}
-    .cy-track-a-head p{margin:0;max-width:680px;color:#ECF3FC;font-size:13.5px;line-height:1.6}
-    .cy-track-chip-row{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end;max-width:360px}
-    .cy-track-chip{font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;background:#fff;border-radius:9999px;padding:5px 10px;white-space:nowrap;box-shadow:0 8px 18px -14px rgba(0,0,0,.45)}
-    .cy-track-a-body{background:#fff;padding:20px 20px 22px}
-    .cy-track-map{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:0 0 18px}
-    .cy-track-map-card{border:1px solid #E9E9EB;border-radius:12px;padding:10px 11px;background:#fff;font-size:12px;line-height:1.4;color:#525363}
-    .cy-track-map-card b{display:block;font-family:'Poppins',sans-serif;font-size:12.5px;color:#27283C;margin-bottom:3px}
-    .cy-track-b-box{margin:44px 0 34px;border:2px solid #57BABD;border-radius:20px;background:#F1F6FD;overflow:hidden;box-shadow:0 16px 36px -30px rgba(62,149,152,.65)}
-    .cy-track-b-head{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;background:#fff;padding:20px 22px;border-bottom:1px solid #D1E0F8}
-    .cy-track-b-meta{font-family:'Fira Code',monospace;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3E9598;margin-bottom:6px}
-    .cy-track-b-head h2{font-family:'Poppins',sans-serif;font-size:25px;font-weight:600;letter-spacing:-.2px;color:#27283C;line-height:1.2;margin:0 0 6px}
-    .cy-track-b-head p{margin:0;max-width:690px;color:#525363;font-size:13.5px;line-height:1.6}
-    .cy-track-b-body{padding:14px 18px 18px}
-    .cy-track-b-item{background:#fff;border:1px solid #D1E0F8;border-radius:12px;padding:12px 13px;margin-top:9px;font-size:13px;line-height:1.55;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
-    .cy-track-b-item b{color:#27283C;font-weight:600}
-    .cy-track-b-owner{font-size:11px;font-weight:700;white-space:normal;padding:4px 9px;border-radius:9999px;background:#F1F6FD;border:1px solid #D1E0F8;color:#1863DC;line-height:1.25;text-align:right}
-
-
-    .cy-okr-hero{background:linear-gradient(135deg,#27283C 0%,#3D3E50 100%);border-radius:16px;padding:22px 24px;color:#fff;margin:14px 0 14px;box-shadow:0 14px 36px -28px rgba(39,40,60,.7)}
-    .cy-okr-hero h2{font-family:'Poppins',sans-serif;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-.25px;margin:0 0 8px;color:#fff}
-    .cy-okr-hero p{margin:0;color:#ECF3FC;font-size:14px;line-height:1.6;max-width:760px}
-    .cy-draft-note{background:#FFF6E5;border:1px solid #F7D28B;border-radius:12px;padding:12px 14px;color:#684400;font-size:12.8px;line-height:1.55;margin:0 0 16px}
-    .cy-okr-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:14px 0 18px}
-    .cy-okr-card{background:#fff;border:1px solid #E9E9EB;border-radius:14px;overflow:hidden;box-shadow:0 10px 28px -24px rgba(39,40,60,.4)}
-    .cy-okr-head{padding:16px 18px;border-bottom:1px solid #E9E9EB;background:#F8FAFC}
-    .cy-okr-num{display:inline-flex;font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:9999px;background:#ECF3FC;color:#1863DC;padding:4px 9px;margin-bottom:8px}
-    .cy-okr-head h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;line-height:1.25;letter-spacing:-.1px;color:#27283C;margin:0}
-    .cy-okr-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
-    .cy-kr-col{padding:15px 17px}
-    .cy-kr-col:first-child{border-right:1px solid #E9E9EB}
-    .cy-kr-col h4{font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;color:#27283C;margin:0 0 8px}
-    .cy-kr-col ul{margin:0;padding:0;list-style:none}
-    .cy-kr-col li{padding:7px 0;border-bottom:1px solid #F4F5F7;color:#525363;font-size:12.8px;line-height:1.5}
-    .cy-kr-col li:last-child{border-bottom:0}
-    .cy-track-hint{background:#F1F6FD;border-top:1px solid #D1E0F8;padding:11px 17px;color:#525363;font-size:12.5px;line-height:1.55}
-    .cy-map-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
-    .cy-map-card{background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:13px 14px;color:#525363;font-size:12.8px;line-height:1.55}
-    .cy-map-card b{display:block;font-family:'Poppins',sans-serif;font-size:13.5px;color:#27283C;margin-bottom:5px}
-    .cy-map-card span{display:inline-flex;margin:7px 5px 0 0;border-radius:9999px;padding:3px 8px;font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;background:#ECF3FC;color:#1863DC}
-    .cy-okr-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:10px;background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden;font-size:12.6px}
-    .cy-okr-table th{font-family:'Poppins',sans-serif;text-align:left;background:#F8FAFC;color:#27283C;font-size:12px;padding:10px;border-bottom:1px solid #E9E9EB}
-    .cy-okr-table td{vertical-align:top;padding:10px;border-bottom:1px solid #F4F5F7;color:#525363;line-height:1.5}
-    .cy-okr-table tr:last-child td{border-bottom:0}
-
-    @media (max-width:760px){.cy-summary-band,.cy-brief-grid,.cy-readable-grid,.cy-track-grid,.cy-track-a-head,.cy-track-b-head,.cy-track-map,.cy-okr-body,.cy-map-grid{grid-template-columns:1fr}.cy-kr-col:first-child{border-right:0;border-bottom:1px solid #E9E9EB}.cy-tab-labels{position:static}.cy-tab-label{flex:1;min-width:160px}.cy-spine{display:none!important}.cy-track-chip-row{justify-content:flex-start}.cy-track-b-item{grid-template-columns:1fr}}
-
-    summary span[style*='white-space:nowrap']{white-space:normal!important;line-height:1.35}
-    summary{align-items:flex-start!important}
-
-    @media print{ .cy-spine{position:absolute} details, .cy-tband{break-inside:avoid} body{background:#fff} .cy-tab-labels{display:none} .cy-tab-panel{display:block!important} }
-  
-
-    /* Simpler readability pass: less decoration, clearer navigation */
-    .cy-simple-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px;padding:10px;background:#fff;border:1px solid #E9E9EB;border-radius:10px}
-    .cy-simple-nav a{display:inline-block;padding:6px 10px;border:1px solid #D1E0F8;border-radius:9999px;background:#F8FAFC;font-size:12.5px;color:#1863DC;text-decoration:none;line-height:1.2}
-    .cy-simple-nav a:hover{background:#ECF3FC;text-decoration:none}
-    .cy-simple-section{background:#fff;border:1px solid #E9E9EB;border-radius:10px;padding:16px 18px;margin:14px 0}
-    .cy-simple-section h2,.cy-simple-section h3{font-family:'Poppins',sans-serif;color:#27283C;margin:0 0 8px;line-height:1.25}
-    .cy-simple-section h2{font-size:22px}.cy-simple-section h3{font-size:16px}
-    .cy-simple-note{background:#F8FAFC;border:1px solid #E9E9EB;border-left:4px solid #1863DC;border-radius:8px;padding:11px 13px;color:#525363;font-size:13px;line-height:1.55;margin:10px 0}
-    .cy-simple-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #E9E9EB;border-radius:8px;overflow:hidden;font-size:13px;margin:10px 0 2px}
-    .cy-simple-table th{background:#F8FAFC;color:#27283C;font-family:'Poppins',sans-serif;font-size:12px;text-align:left;padding:9px;border-bottom:1px solid #E9E9EB}
-    .cy-simple-table td{padding:9px;border-bottom:1px solid #F4F5F7;color:#525363;vertical-align:top;line-height:1.45}
-    .cy-simple-table tr:last-child td{border-bottom:0}
-    .cy-tab-labels{box-shadow:none!important;border-radius:10px!important;top:0!important;padding:4px!important}
-    .cy-tab-label{padding:8px 12px!important;border-radius:8px!important}
-    .cy-summary-band,.cy-track-grid,.cy-brief-grid,.cy-readable-grid,.cy-track-map{gap:10px!important}
-    .cy-summary-hero,.cy-track-card,.cy-brief-card,.cy-readable-box,.cy-summary-side,.cy-okr-card{box-shadow:none!important;border-radius:10px!important}
-    .cy-track-card.primary,.cy-summary-hero,.cy-track-a-head{background:#fff!important;color:#27283C!important;border:1px solid #E9E9EB!important;box-shadow:none!important}
-    .cy-track-card.primary h3,.cy-track-card.primary p,.cy-summary-hero h2,.cy-summary-hero p,.cy-track-a-head h2,.cy-track-a-head p{color:#27283C!important}
-    .cy-track-card.primary .cy-track-badge,.cy-track-badge{background:#F8FAFC!important;color:#1863DC!important;border:1px solid #D1E0F8!important}
-    .cy-track-lane,.cy-track-card.support .cy-track-lane{background:#fff!important;border:1px solid #E9E9EB!important;color:#525363!important}
-    .cy-track-lane span:not(.cy-track-code){color:#525363!important}
-    .cy-track-a-box,.cy-track-b-box{border:1px solid #E9E9EB!important;border-radius:12px!important;box-shadow:none!important;background:#fff!important}
-    .cy-track-a-body,.cy-track-b-body{padding:16px!important}
-    .cy-track-chip{box-shadow:none!important;border:1px solid #E9E9EB!important}
-    .cy-tband{background:#fff!important;color:#27283C!important;border:1px solid #E9E9EB!important;border-left-width:6px!important;border-radius:10px!important}
-    .cy-tband *{color:#27283C!important}
-    details{border-radius:10px!important;box-shadow:none!important}
-    details summary{padding:12px 14px!important}
-    details > div{padding-left:54px!important}
-    .cy-okr-hero{background:#fff!important;color:#27283C!important;border:1px solid #E9E9EB!important;box-shadow:none!important;border-radius:10px!important}
-    .cy-okr-hero h2,.cy-okr-hero p{color:#27283C!important}
-    .cy-okr-table{border-radius:8px!important;font-size:12.8px!important}
-    @media(max-width:760px){.cy-simple-table{font-size:12.4px}.cy-simple-nav{position:static}.cy-simple-section{padding:13px}.cy-simple-table th,.cy-simple-table td{padding:8px}}
-
-
-/* Balanced readability pass: minimal design with clear distinctions */
-.cy-tab-labels{box-shadow:0 8px 24px -20px rgba(39,40,60,.38)!important;border-radius:12px!important;top:10px!important;padding:5px!important}
-.cy-tab-label{padding:9px 14px!important;border-radius:9px!important}
-#tab-concise:checked ~ .cy-tab-labels label[for="tab-concise"],#tab-detailed:checked ~ .cy-tab-labels label[for="tab-detailed"],#tab-okrs:checked ~ .cy-tab-labels label[for="tab-okrs"]{background:#1863DC!important;color:#fff!important;border:0!important}
-#tab-concise:checked ~ .cy-tab-labels label[for="tab-concise"] span,#tab-detailed:checked ~ .cy-tab-labels label[for="tab-detailed"] span,#tab-okrs:checked ~ .cy-tab-labels label[for="tab-okrs"] span{color:#D1E0F8!important}
-.cy-simple-nav{border-radius:12px!important;background:#fff!important;border:1px solid #E9E9EB!important;box-shadow:0 8px 24px -22px rgba(39,40,60,.45)!important}
-.cy-simple-nav a{background:#F8FAFC!important;border:1px solid #D1E0F8!important;color:#1863DC!important}
-.cy-simple-section{border-radius:12px!important;border:1px solid #E9E9EB!important;background:#fff!important;box-shadow:0 10px 28px -26px rgba(39,40,60,.38)!important}
-.cy-summary-hero{background:#1863DC!important;color:#fff!important;border:0!important;border-radius:14px!important;box-shadow:0 10px 28px -18px rgba(24,99,220,.45)!important}
-.cy-summary-hero h2,.cy-summary-hero p{color:#fff!important}.cy-summary-hero p{color:#ECF3FC!important}
-.cy-summary-side,.cy-brief-card,.cy-readable-box{border-radius:12px!important;background:#fff!important;box-shadow:0 8px 24px -24px rgba(39,40,60,.35)!important}
-.cy-track-card.primary{background:#1863DC!important;color:#fff!important;border-color:#1863DC!important;border-radius:16px!important;box-shadow:0 12px 30px -22px rgba(24,99,220,.55)!important}
-.cy-track-card.primary h3{color:#fff!important}.cy-track-card.primary p{color:#ECF3FC!important}
-.cy-track-card.primary .cy-track-badge{background:rgba(255,255,255,.16)!important;color:#fff!important;border:1px solid rgba(255,255,255,.26)!important}
-.cy-track-card.support{background:#F1F6FD!important;border-color:#D1E0F8!important;border-radius:16px!important;box-shadow:0 10px 28px -24px rgba(62,149,152,.42)!important}
-.cy-track-card.support .cy-track-badge{background:#fff!important;color:#1863DC!important;border:1px solid #D1E0F8!important}
-.cy-track-lane{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.18)!important;color:#fff!important}
-.cy-track-card.primary .cy-track-lane span:not(.cy-track-code){color:#fff!important}
-.cy-track-card.support .cy-track-lane{background:#fff!important;border-color:#D1E0F8!important;color:#525363!important}
-.cy-track-card.support .cy-track-lane span:not(.cy-track-code){color:#525363!important}
-.cy-track-a-box{border:2px solid #1863DC!important;border-radius:18px!important;background:#ECF3FC!important;box-shadow:0 14px 34px -28px rgba(24,99,220,.55)!important}
-.cy-track-a-head{background:#1863DC!important;color:#fff!important;border:0!important}
-.cy-track-a-head h2{color:#fff!important}.cy-track-a-head p{color:#ECF3FC!important}
-.cy-track-a-body{background:#fff!important;padding:18px!important}
-.cy-track-b-box{border:2px solid #57BABD!important;border-radius:18px!important;background:#F1F6FD!important;box-shadow:0 12px 28px -26px rgba(62,149,152,.45)!important}
-.cy-track-b-head{background:#fff!important;border-bottom:1px solid #D1E0F8!important}
-.cy-tband{background:#fff!important;border:1px solid #E9E9EB!important;border-left-width:7px!important;border-radius:12px!important;color:#27283C!important;box-shadow:0 8px 22px -24px rgba(39,40,60,.3)!important}
-.cy-tband h3,.cy-tband span{color:#27283C!important}.cy-tband span{opacity:1!important}
-section:nth-of-type(1) .cy-tband{border-left-color:#1863DC!important}
-section:nth-of-type(2) .cy-tband{border-left-color:#57BABD!important}
-section:nth-of-type(3) .cy-tband{border-left-color:#2DAD70!important}
-section:nth-of-type(4) .cy-tband{border-left-color:#955AE8!important}
-section:nth-of-type(5) .cy-tband{border-left-color:#CC8000!important}
-details{border-radius:12px!important;border:1px solid #E9E9EB!important;background:#fff!important;box-shadow:none!important}
-details summary{padding:13px 16px!important;background:#fff!important}
-details[open] summary{border-bottom:1px solid #F4F5F7!important;background:#FAFBFC!important}
-details > div{padding-left:60px!important}
-.cy-okr-hero{background:#27283C!important;color:#fff!important;border:0!important;border-radius:14px!important;box-shadow:0 10px 28px -22px rgba(39,40,60,.55)!important}
-.cy-okr-hero h2{color:#fff!important}.cy-okr-hero p{color:#ECF3FC!important}
-.cy-okr-table,.cy-simple-table{border-radius:10px!important;border:1px solid #E9E9EB!important;overflow:hidden!important}
-.cy-okr-table th,.cy-simple-table th{background:#F8FAFC!important;color:#27283C!important}
-
-</style>
+    .cy-tbl{width:100%;border-collapse:collapse;font-size:13px;margin:2px 0}
+    .cy-tbl th{text-align:left;font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:600;color:#27283C;padding:9px 12px;background:#F1F6FD;border-bottom:1px solid #E1E7EE}
+    .cy-tbl td{padding:9px 12px;border-bottom:1px solid #F0F2F5;color:#525363;vertical-align:top;line-height:1.5}
+    .cy-tbl tr:last-child td{border-bottom:0}
+    .cy-tbl td b{color:#27283C}
+    @media print{ .cy-spine{position:absolute} details{break-inside:avoid} body{background:#fff} .cy-tabbar{display:none} }
+  </style>
 </helmet>
-<sc-if hint-placeholder-val="{{ true }}" value="{{ showSpine }}">
-<div aria-hidden="true" class="cy-spine" style="position:fixed;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;z-index:50">
-<div style="flex:1;background:#1863DC"></div>
-<div style="flex:1;background:#57BABD"></div>
-<div style="flex:1;background:#2DAD70"></div>
-<div style="flex:1;background:#955AE8"></div>
-<div style="flex:1;background:#CC8000"></div>
-</div>
+
+<template id="__bundler_thumbnail" data-bg-color="#1863DC">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#1863DC"/>
+    <circle cx="600" cy="300" r="120" fill="#ffffff"/>
+    <circle cx="560" cy="270" r="18" fill="#1863DC"/>
+    <circle cx="640" cy="300" r="15" fill="#1863DC"/>
+    <circle cx="585" cy="340" r="13" fill="#1863DC"/>
+    <rect x="360" y="500" width="480" height="26" rx="13" fill="#ffffff"/>
+    <rect x="360" y="556" width="360" height="26" rx="13" fill="#ffffff" opacity="0.7"/>
+    <rect x="360" y="612" width="420" height="26" rx="13" fill="#ffffff" opacity="0.5"/>
+  </svg>
+</template>
+
+<sc-if value="{{ showSpine }}" hint-placeholder-val="{{ true }}">
+  <div aria-hidden="true" style="position:fixed;left:0;top:0;bottom:0;width:5px;display:flex;flex-direction:column;z-index:50" class="cy-spine">
+    <div style="flex:1;background:#1863DC"></div>
+    <div style="flex:1;background:#57BABD"></div>
+    <div style="flex:1;background:#2DAD70"></div>
+    <div style="flex:1;background:#955AE8"></div>
+    <div style="flex:1;background:#CC8000"></div>
+  </div>
 </sc-if>
-<div style="font-family:'Inter',system-ui,sans-serif;color:#3D3E50;font-size:14.5px;line-height:1.6;max-width:960px;margin:0 auto;padding:0 28px 72px;position:relative">
-<!-- HEADER -->
-<header style="padding:44px 0 0">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
-<img alt="CookieYes" src="https://assets.cookieyes.com/cookieyes_logo_9fa85f5b07.svg" style="height:24px;width:auto"/>
-<span style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#525363">GROWTH - TEAM 1 ROADMAP · FY2026–27</span>
-</div>
-<h1 style="font-family:'Poppins',sans-serif;font-size:40px;font-weight:600;line-height:1.15;letter-spacing:-0.5px;color:#27283C;margin:0 0 12px;max-width:760px">Growth - Team 1 Roadmap 2026-27</h1>
-<p style="color:#525363;font-size:15.5px;line-height:1.65;max-width:680px;margin:0">Q2 in full detail, classified under the <b style="color:#27283C">five measured tiers</b> — with growth-initiated work clearly separated from product-management support. Q3 is directional; Q4 stays open until the evidence is in.</p>
-<div style="margin-top:26px;background:#1863DC;border-radius:12px;box-shadow:0 8px 28px -4px rgba(24,99,220,0.20);overflow:hidden">
-<div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding:22px 24px">
-<div style="flex:1;min-width:260px">
-<div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:8px;padding:3px 12px;border-radius:9999px;background:rgba(255,255,255,.16)">
-<span style="width:6px;height:6px;border-radius:9999px;background:#78DFAF"></span>
-<span style="font-family:'Poppins',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff">North star metric</span>
-</div>
-<div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;line-height:1.2;letter-spacing:-0.25px;color:#fff">$21M ARR</div>
-</div>
-<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-<span style="font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:500;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:9999px;padding:6px 14px;white-space:nowrap">Organic/direct paid signups</span>
-<span style="color:#D1E0F8;font-size:14px">→</span>
-<span style="font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:500;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:9999px;padding:6px 14px;white-space:nowrap">Paid customers</span>
-<span style="color:#D1E0F8;font-size:14px">→</span>
-<span style="font-family:'Fira Code',monospace;font-size:12.5px;font-weight:600;color:#1863DC;background:#fff;border-radius:9999px;padding:6px 14px;white-space:nowrap">ARR contribution</span>
-</div>
-</div>
-<div style="padding:10px 24px;background:rgba(19,79,176,.55);font-size:12.5px;color:#ECF3FC">Company north star: <span style="font-family:'Fira Code',monospace;color:#fff">$21M ARR</span> · supporting Q2 organisation KR: <span style="font-family:'Fira Code',monospace;color:#fff">6,653 → 10,645 paid signups</span> from organic/direct</div>
-</div>
-</header>
-<!-- TABBED ROADMAP -->
-<div class="cy-tabs">
-<input checked="" class="cy-tab-input" id="tab-concise" name="roadmapView" type="radio"/>
-<input class="cy-tab-input" id="tab-detailed" name="roadmapView" type="radio"/>
-<input class="cy-tab-input" id="tab-okrs" name="roadmapView" type="radio"/>
-<div aria-label="Roadmap views" class="cy-tab-labels" role="tablist">
-<label class="cy-tab-label" for="tab-concise">Summary<span>Quick presentation view</span></label>
-<label class="cy-tab-label" for="tab-detailed">Roadmap detail<span>Track A, Track B and tier work</span></label>
-<label class="cy-tab-label" for="tab-okrs">OKRs<span>Draft metrics and mapping</span></label>
-</div>
-<div class="cy-tab-content">
-<section aria-label="Concise roadmap view" class="cy-tab-panel cy-concise-panel">
-<div aria-label="Summary navigation" class="cy-simple-nav">
-<a href="#summary-tracks">Tracks</a>
-<a href="#summary-tiers">Tiers</a>
-<a href="#summary-q2">Q2 focus</a>
-<a href="#summary-metrics">Metrics</a>
-</div>
-<section class="cy-simple-section" id="summary-tracks">
-<h2>Summary</h2>
-<p style="margin:0;color:#525363;font-size:13.5px;line-height:1.55">The roadmap is split into two tracks. Track A is the main growth-owned roadmap. Track B is product-management support that contributes to the same outcomes but is not initiated by Team 1.</p>
-<table class="cy-simple-table">
-<thead><tr><th>Track</th><th>What it means</th><th>How success is judged</th></tr></thead>
-<tbody>
-<tr><td><b>Track A</b><br/>Growth-initiated work</td><td>Team-owned acquisition, visibility, conversion, authority, and efficiency work.</td><td>New subscriptions, paid-conversion contribution, visibility recovery, authority signals, and repeatable systems.</td></tr>
-<tr><td><b>Track B</b><br/>Product-management support</td><td>Release amplification and product feedback work triggered by Product.</td><td>Launch signups, assisted conversions, visibility uplift, and product/content improvements.</td></tr>
-<tr><td><b>Capacity guardrail</b><br/>70/30 operating model</td><td>70% planned roadmap work; up to 30% for high-priority ad hoc and cross-team requests.</td><td>Requests beyond the 30% buffer are queued, traded off against roadmap items, or escalated for leadership reprioritisation.</td></tr>
-</tbody>
-</table>
-</section>
-<section class="cy-simple-section" id="summary-tiers">
-<h2>Track A tiers</h2>
-<table class="cy-simple-table">
-<thead><tr><th>Tier</th><th>Owner logic</th><th>Core metric</th><th>Main Q2 work</th></tr></thead>
-<tbody>
-<tr><td><b>Acquisition</b></td><td>Shreya with team support</td><td>New subscriptions, signups, LP/plugin/generator performance</td><td>Generator sites, WP plugin channel, acquisition landing pages, events/webinars.</td></tr>
-<tr><td><b>Visibility</b></td><td>Litto for search metrics; Safna/Shreya for content-led work where relevant</td><td>Top-3 count, SoV, SoA, qualified visits, cluster-level assists</td><td>SEO recovery, AI visibility reporting, developer and agent-readiness content. Documentation is considered only where it naturally belongs inside the priority cluster.</td></tr>
-<tr><td><b>Conversion</b></td><td>Whole team</td><td>Paid conversion from each person’s workstream</td><td>CRO, forms, trust blocks, conversion video, lead-gen assets.</td></tr>
-<tr><td><b>Authority</b></td><td>Shreya + Safna</td><td>Mentions, referring domains, subscribers, citations</td><td>Research, PR, newsletter, brand voice, POV content, Wikipedia/entity work.</td></tr>
-<tr><td><b>Efficiency</b></td><td>Whole team</td><td>Workflows, experiments, hours saved, validated tactics</td><td>AI-assisted workflows, staging tests, sandbox experiments.</td></tr>
-</tbody>
-</table>
-</section>
-<section class="cy-simple-section" id="summary-q2">
-<h2>Q2 focus</h2>
-<table class="cy-simple-table">
-<thead><tr><th>Focus area</th><th>Work included</th></tr></thead>
-<tbody>
-<tr><td><b>Acquisition pages</b></td><td>Enterprise, HubSpot, MCP, developer resources, npm, T&amp;C, policy generic, compliance checker, DPDP, AccessiYes, Trust Center, Shopify/Wix, support forum SEO, events and webinars.</td></tr>
-<tr><td><b>Search and AI discovery</b></td><td>Priority cluster recovery, AI Search reporting, agent-readiness content, skills/connectors explainers, and CookieYes MCP routes. Documentation appears only inside the relevant cluster, not as a separate SEO/GEO/AEO workstream.</td></tr>
-<tr><td><b>Conversion layer</b></td><td>CTA hierarchy, form flow, trust blocks, conversion-focused video placement, attribution, lead-gen resources, and translated-video workflow with Alconost.</td></tr>
-<tr><td><b>Authority and systems</b></td><td>Research programme, newsletter growth, social/POV direction, Wikipedia/entity groundwork, AI workflows, staging, and sandbox testing.</td></tr>
-</tbody>
-</table>
-</section>
-<section class="cy-simple-section" id="summary-metrics">
-<h2>Metric principle</h2>
-<div class="cy-simple-note"><b style="color:#27283C">North star:</b> <b style="color:#27283C">$21M ARR</b>. Supporting Q2 organisation KR: achieve a 60% QoQ increase in paid signups from organic/direct sources, from <b style="color:#27283C">6,653</b> in Q1 to <b style="color:#27283C">10,645</b> in Q2. Other OKR inputs remain blank until the sheet-based values are confirmed.</div>
-<table class="cy-simple-table">
-<thead><tr><th>Metric type</th><th>Examples</th></tr></thead>
-<tbody>
-<tr><td><b>Volume</b></td><td>New subscriptions, signups, trials, qualified organic/direct paid signups.</td></tr>
-<tr><td><b>Quality</b></td><td>Paid conversion contribution, signup-to-paid/trial-to-paid rate, conversion rate.</td></tr>
-<tr><td><b>Discovery</b></td><td>Top-3 keywords, SoV, SoA, AI citations, qualified organic visits.</td></tr>
-<tr><td><b>Authority / efficiency</b></td><td>Owned research, PR pushes, repeatable workflows, structured experiments, and validated learnings.</td></tr>
-</tbody>
-</table>
-</section>
-</section>
-<section aria-label="OKR and tier mapping view" class="cy-tab-panel cy-okr-panel"><div aria-label="OKR navigation" class="cy-simple-nav"><a href="#okr-inputs">Inputs</a><a href="#okr-list">OKRs</a><a href="#okr-tier-map">Tier map</a><a href="#okr-track-b">Track B</a></div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:20px;margin:14px 0">
-<div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#686876;margin-bottom:8px">Draft · OKRs and tier mapping · FY2026–27</div>
-<h2 style="font-family:'Poppins',sans-serif;font-size:26px;font-weight:600;line-height:1.2;color:#27283C;margin:0 0 8px">OKRs, simplified</h2>
-<p style="margin:0;color:#525363;font-size:14px;line-height:1.6;max-width:780px">This tab keeps the OKRs measurable and ownable. Final sheet-dependent numbers stay blank. The structure is <b style="color:#27283C">4 objectives and 9 KRs total</b>: Acquisition has 2 KRs, Visibility has 3 KRs because SEO/search and AI visibility need separate measurement, Authority has 2 output/leading KRs, and the growth operating system has 2 KRs.</p>
-</div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:14px 16px;margin:0 0 16px">
-<h3 style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;color:#27283C;margin:0 0 8px">Page guide</h3>
-<ol style="margin:0;padding-left:20px;color:#525363;font-size:13px;line-height:1.7">
-<li><b style="color:#27283C">Four OKRs</b> — 9 KRs total; most objectives have 2 KRs, Visibility has 3.</li>
-<li><b style="color:#27283C">Tier mapping</b> — where each roadmap tier contributes.</li>
-<li><b style="color:#27283C">Track B mapping</b> — how product-support work contributes without becoming its own OKR.</li>
-</ol>
-</div>
-<div style="display:grid;gap:14px;margin:0 0 18px" id="okr-list">
-<article style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:16px">
-<div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1863DC;margin-bottom:6px">Objective 1 · Acquisition</div>
-<h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:#27283C;margin:0 0 10px">Deliver Team 1’s organic/direct paid-signup contribution to ARR.</h3>
-<table class="cy-okr-table">
-<thead><tr><th style="width:120px">Type</th><th>Key result</th></tr></thead>
-<tbody>
-<tr><td><b>Lagging KR</b></td><td>Grow organic/direct paid signups from <b>6,653</b> in Q1 to <b>10,645</b> in Q2, achieving the organisation KR of <b>+60% QoQ growth</b>.</td></tr>
-<tr><td><b>Leading KR</b></td><td>Ship and track agreed Q2 acquisition work across priority LPs, generator surfaces, plugin channel, events/webinars, release amplification, and conversion-focused video placements, with owner, CTA path, and attribution defined for each.</td></tr>
-</tbody>
-</table>
-<p style="margin:10px 0 0;color:#686876;font-size:12.5px;line-height:1.5"><b style="color:#27283C">Track B note:</b> Release amplification counts here when launches create attributable signups, trials, paid signups, or assisted conversions.</p>
-</article>
-<article style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:16px">
-<div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3E9598;margin-bottom:6px">Objective 2 · Visibility</div>
-<h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:#27283C;margin:0 0 10px">Rebuild CookieYes visibility across search, AI, and developer discovery.</h3>
-<table class="cy-okr-table">
-<thead><tr><th style="width:120px">Type</th><th>Key result</th></tr></thead>
-<tbody>
-<tr><td><b>Lagging KR 1</b><br/><span style="font-size:11px;color:#686876">SEO/search</span></td><td>Improve priority SEO/search visibility from <b>____</b> to <b>____</b>, measured through confirmed cluster metrics such as top-3 count, SoV, qualified organic visits, and signup assists.</td></tr>
-<tr><td><b>Lagging KR 2</b><br/><span style="font-size:11px;color:#686876">AI visibility</span></td><td>Improve AI visibility by <b>10%</b>, measured through SoA, AI citation share, AI referral traffic, and AI-assisted signup paths where trackable.</td></tr>
-<tr><td><b>Leading KR</b></td><td>Complete agreed Q2 visibility actions for priority clusters, including SEO recovery inputs, migration/technical health reporting, AI visibility reporting, developer/agent-readiness content, and cluster-relevant documentation support.</td></tr>
-</tbody>
-</table>
-<p style="margin:10px 0 0;color:#686876;font-size:12.5px;line-height:1.5"><b style="color:#27283C">Scope guardrail:</b> Documentation may support the relevant cluster, but it is not a separate SEO/GEO/AEO plan for this quarter.</p>
-</article>
-<article style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:16px">
-<div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#955AE8;margin-bottom:6px">Objective 3 · Authority</div>
-<h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:#27283C;margin:0 0 10px">Build CookieYes authority through owned research, PR, and credible POV distribution.</h3>
-<table class="cy-okr-table">
-<thead><tr><th style="width:120px">Type</th><th>Key result</th></tr></thead>
-<tbody>
-<tr><td><b>Output KR</b></td><td>Complete <b>one production-ready owned research asset</b> for Q2 publication, with approved topic, signed-off methodology, confirmed data feasibility, final draft, and distribution plan.</td></tr>
-<tr><td><b>Leading KR</b></td><td>Run <b>3 PR/newsworthy pushes</b> in Q2, each with a clear angle, target channel list, owner, publishing plan, follow-up tracker, and supporting distribution assets including video where relevant.</td></tr>
-</tbody>
-</table>
-<p style="margin:10px 0 0;color:#686876;font-size:12.5px;line-height:1.5"><b style="color:#27283C">Measurement note:</b> Brand POV, newsletter, social, forums, and entity/Wikipedia work support this objective, but they do not carry numeric Q2 KRs until reliable baselines are confirmed.</p>
-</article>
-<article style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:16px">
-<div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CC8000;margin-bottom:6px">Objective 4 · Growth operating system</div>
-<h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:#27283C;margin:0 0 10px">Make Team 1 execution faster, more measurable, and easier to repeat.</h3>
-<table class="cy-okr-table">
-<thead><tr><th style="width:120px">Type</th><th>Key result</th></tr></thead>
-<tbody>
-<tr><td><b>Leading KR</b></td><td>Run <b>10</b> structured experiments or workflow improvements across content, SEO, video, translation, reporting, and campaigns, each with an owner, goal, metric, and review date.</td></tr>
-<tr><td><b>Lagging KR</b></td><td>Turn <b>4</b> successful experiments or workflows into repeatable team processes, based on measured impact on speed, quality, visibility, signups, conversion, or learning.</td></tr>
-</tbody>
-</table>
-<p style="margin:10px 0 0;color:#686876;font-size:12.5px;line-height:1.5"><b style="color:#27283C">Capacity note:</b> The 70/30 model stays as a roadmap guardrail and intake rule, not as an OKR.</p>
-</article>
-</div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:16px;margin:0 0 18px">
-<h3 id="okr-tier-map" style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:#27283C;margin:0 0 10px">2. Tier mapping</h3>
-<table class="cy-okr-table">
-<thead><tr><th>Tier</th><th>Maps to</th><th>Core metric</th></tr></thead>
-<tbody>
-<tr><td><b>Acquisition</b></td><td>O1</td><td>Organic/direct paid signups: Q1 <b>6,653</b> → Q2 <b>10,645</b></td></tr>
-<tr><td><b>Conversion</b></td><td>O1 + O2</td><td>CTA paths, page-level conversion, conversion-focused video placements, signup assists, paid-conversion contribution where attributable</td></tr>
-<tr><td><b>Visibility</b></td><td>O2</td><td>Top-3 count · SoV · SoA · AI citations/referrals· Cluster-level signup assists</td></tr>
-<tr><td><b>Authority</b></td><td>O3</td><td>Owned research asset production-ready · 3 PR/newsworthy pushes · supporting POV/newsletter/video/entity work tracked separately</td></tr>
-<tr><td><b>Efficiency</b></td><td>O4</td><td>Structured experiments · repeatable workflows · execution speed / quality improvements</td></tr>
-</tbody>
-</table>
-</div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:16px;margin:0 0 18px">
-<h3 id="okr-track-b" style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:#27283C;margin:0 0 10px">3. Track B mapping</h3>
-<table class="cy-okr-table">
-<thead><tr><th>Track B item</th><th>Supports</th></tr></thead>
-<tbody>
-<tr><td><b>Release amplification</b></td><td>O1 + O2 + O3 as relevant</td>
-<tr><td><b>Product feedback channel</b></td><td>O1 + O2 + O4 as relevant</td>
-</table>
-</div>
-</section>
-<section aria-label="Detailed roadmap view" class="cy-tab-panel cy-detailed-panel">
-<div aria-label="Detailed roadmap navigation" class="cy-simple-nav">
-<a href="#d-runway">Runway</a>
-<a href="#track-a">Track A</a>
-<a href="#d-acquisition">Acquisition</a>
-<a href="#d-visibility">Visibility</a>
-<a href="#d-conversion">Conversion</a>
-<a href="#d-authority">Authority</a>
-<a href="#d-efficiency">Efficiency</a>
-<a href="#track-b">Track B</a>
-<a href="#ad-hoc">Ad hoc</a>
-<a href="#q3">Q3/Q4</a>
-<a href="#d-deps">Dependencies</a>
+
+<div style="font-family:'Inter',system-ui,sans-serif;color:#3D3E50;font-size:14.5px;line-height:1.6;max-width:920px;margin:0 auto;padding:0 28px 72px;position:relative">
+
+  <!-- HEADER -->
+  <header style="padding:44px 0 0">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+      <img src="assets/cookieyes-wordmark.svg" alt="CookieYes" style="height:23px;width:auto">
+      <span style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#525363">Growth · Team 1 Roadmap · FY2026–27</span>
+    </div>
+    <h1 style="font-family:'Poppins',sans-serif;font-size:36px;font-weight:600;line-height:1.15;letter-spacing:-0.5px;color:#27283C;margin:0 0 12px;max-width:720px">Growth roadmap — organised the way it's measured</h1>
+    <p style="color:#525363;font-size:15px;line-height:1.65;max-width:680px;margin:0">Two tracks, five measured tiers, one north star. Q2 is detailed, Q3 is directional, Q4 stays open until the evidence is in.</p>
+
+    <!-- North star -->
+    <div style="margin-top:24px;background:#1863DC;border-radius:12px;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:20px 22px">
+        <div style="flex:1;min-width:240px">
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:7px;padding:3px 11px;border-radius:9999px;background:rgba(255,255,255,.16)">
+            <span style="width:6px;height:6px;border-radius:9999px;background:#78DFAF"></span>
+            <span style="font-family:'Poppins',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#fff">North star</span>
+          </div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:28px;line-height:1.1;letter-spacing:-0.5px;color:#fff">$21M ARR</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap">
+          <span style="font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:9999px;padding:6px 13px;white-space:nowrap">Organic / direct signups</span>
+          <span style="color:#D1E0F8;font-size:14px">→</span>
+          <span style="font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:9999px;padding:6px 13px;white-space:nowrap">Paid customers</span>
+          <span style="color:#D1E0F8;font-size:14px">→</span>
+          <span style="font-family:'Fira Code',monospace;font-size:12.5px;font-weight:600;color:#1863DC;background:#fff;border-radius:9999px;padding:6px 13px;white-space:nowrap">ARR contribution</span>
+        </div>
+      </div>
+      <div style="padding:10px 22px;background:rgba(19,79,176,.5);font-size:12.5px;color:#ECF3FC">Q2 organisation KR: <b style="color:#fff;font-weight:600">+60% QoQ</b> paid signups from organic / direct — <span style="font-family:'Fira Code',monospace;color:#fff">6,653 → 10,645</span></div>
+    </div>
+  </header>
+
+  <!-- TABS -->
+  <div class="cy-tabbar" style="position:sticky;top:0;z-index:40;margin:26px -28px 0;padding:12px 28px;background:rgba(246,248,250,0.9);backdrop-filter:blur(8px)">
+    <div style="display:inline-flex;gap:4px;background:#fff;border:1px solid #E9E9EB;border-radius:10px;padding:4px">
+      <button onClick="{{ showSummary }}" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);background:{{ sumBg }};color:{{ sumC }};line-height:1.15">Summary<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Presentation view</span></button>
+      <button onClick="{{ showDetail }}" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);background:{{ detBg }};color:{{ detC }};line-height:1.15">Roadmap detail<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Track A, B &amp; tier work</span></button>
+      <button onClick="{{ showOkrs }}" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);background:{{ okrBg }};color:{{ okrC }};line-height:1.15">OKRs<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Metrics &amp; mapping</span></button>
+    </div>
+  </div>
+
+  <!-- ============================ SUMMARY ============================ -->
+  <sc-if value="{{ isSummary }}" hint-placeholder-val="{{ true }}">
+  <div data-screen-label="Summary">
+
+    <!-- Two tracks -->
+    <div style="margin-top:24px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0 0 6px">Two tracks</h2>
+      <p style="color:#525363;font-size:13.5px;margin:0 0 12px;max-width:720px">Track A is the growth-owned roadmap. Track B is product-management support that feeds the same outcomes but is triggered by Product, not initiated by Team 1.</p>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden">
+        <table class="cy-tbl">
+          <thead><tr><th style="width:22%">Track</th><th style="width:40%">What it means</th><th>How success is judged</th></tr></thead>
+          <tbody>
+            <tr><td><b>Track A</b><br><span style="font-size:11.5px">Growth-initiated</span></td><td>Team-owned acquisition, visibility, conversion, authority and efficiency work.</td><td>New signups, paid-conversion contribution, visibility recovery, authority signals, repeatable systems.</td></tr>
+            <tr><td><b>Track B</b><br><span style="font-size:11.5px">Product support</span></td><td>Release amplification and product feedback triggered by Product.</td><td>Launch signups, assisted conversions, visibility uplift, product / content improvements.</td></tr>
+            <tr><td><b>70 / 30 model</b><br><span style="font-size:11.5px">Capacity guardrail</span></td><td>70% planned roadmap work; up to 30% for high-priority ad hoc and cross-team requests.</td><td>Requests beyond the buffer are queued, traded off, or escalated for reprioritisation.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tiers -->
+    <div style="margin-top:28px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0 0 12px">Track A tiers</h2>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden">
+        <table class="cy-tbl">
+          <thead><tr><th style="width:18%">Tier</th><th style="width:30%">Owner logic</th><th>Core metric &amp; Q2 work</th></tr></thead>
+          <tbody>
+            <tr><td><b style="color:#1863DC">Acquisition</b></td><td>Shreya, with team support</td><td>New signups, LP / plugin / generator performance. Generator sites, WP plugin, acquisition landing pages, events / webinars.</td></tr>
+            <tr><td><b style="color:#3E9598">Visibility</b></td><td>Litto for search; Safna / Shreya for content-led work</td><td>Top-3 count, SoV, SoA, qualified visits. SEO recovery, AI visibility reporting, developer / agent-readiness content.</td></tr>
+            <tr><td><b style="color:#2DAD70">Conversion</b></td><td>Whole team — each owns paid conversion from their work</td><td>Paid conversion per workstream. CRO, forms, trust blocks, conversion video, lead-gen assets.</td></tr>
+            <tr><td><b style="color:#955AE8">Authority</b></td><td>Shreya + Safna</td><td>Mentions, referring domains, subscribers, citations. Research, PR, newsletter, brand voice, Wikipedia.</td></tr>
+            <tr><td><b style="color:#CC8000">Efficiency</b></td><td>Whole team</td><td>Workflows, experiments, hours saved. AI-assisted workflows, staging tests, sandbox experiments.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Q2 focus -->
+    <div style="margin-top:28px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0 0 12px">Q2 focus</h2>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden">
+        <table class="cy-tbl">
+          <thead><tr><th style="width:26%">Focus area</th><th>Work included</th></tr></thead>
+          <tbody>
+            <tr><td><b>Acquisition pages</b></td><td>Enterprise, HubSpot, MCP, developer resources, npm, T&amp;C, policy generic, compliance checker, DPDP, AccessiYes, Trust Center, Shopify / Wix, support-forum SEO, events and webinars.</td></tr>
+            <tr><td><b>Search &amp; AI discovery</b></td><td>Priority cluster recovery, AI Search reporting, agent-readiness content, skills / connectors explainers, CookieYes MCP routes. Documentation sits inside the relevant cluster, not as a separate workstream.</td></tr>
+            <tr><td><b>Conversion layer</b></td><td>CTA hierarchy, form flow, trust blocks, conversion-focused video placement, attribution, lead-gen resources, translated-video workflow with Alconost.</td></tr>
+            <tr><td><b>Authority &amp; systems</b></td><td>Research programme, newsletter growth, social / POV direction, Wikipedia groundwork, AI workflows, staging, sandbox testing.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Metric principle -->
+    <div style="margin-top:28px;background:#F1F6FD;border:1px solid #D1E0F8;border-radius:12px;padding:16px 18px;font-size:13px;color:#525363;line-height:1.6">
+      <b style="color:#27283C;font-family:'Poppins',sans-serif;font-size:14px;display:block;margin-bottom:5px">Metric principle</b>
+      North star is <b style="color:#27283C">$21M ARR</b>. Supporting Q2 org KR: a <b style="color:#27283C">+60% QoQ</b> increase in paid signups from organic / direct, from <b style="color:#27283C">6,653</b> to <b style="color:#27283C">10,645</b>. Every item carries a metric and a line to business impact; other OKR baselines stay blank until confirmed.
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============================ ROADMAP DETAIL ============================ -->
+  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Roadmap detail">
+
+    <!-- Runway -->
+    <div style="display:grid;grid-template-columns:1.4fr 1fr .8fr;gap:12px;margin:24px 0 8px">
+      <div style="border-radius:12px;padding:16px 18px;min-height:118px;background:#1863DC;color:#fff">
+        <div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;color:#D1E0F8">Q2 · JUL–SEP · DETAILED</div>
+        <h3 style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;margin:6px 0;color:#fff">Recover &amp; build</h3>
+        <p style="font-size:12.5px;line-height:1.5;margin:0;color:#ECF3FC">Win back rankings and pages that convert; stand up AI visibility, research, the plugin channel and the experiment rhythm.</p>
+      </div>
+      <div style="border-radius:12px;padding:16px 18px;min-height:118px;background:#fff;border:1px solid #E9E9EB">
+        <div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;color:#1863DC">Q3 · OCT–DEC · DIRECTIONAL</div>
+        <h3 style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;margin:6px 0;color:#27283C">Scale &amp; authority</h3>
+        <p style="font-size:12.5px;line-height:1.5;margin:0;color:#525363">Scale what recovery won, publish report #1, push SoA toward 30%.</p>
+      </div>
+      <div style="border-radius:12px;padding:16px 18px;min-height:118px;background:transparent;border:1.5px dashed #BEBFC5">
+        <div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;color:#686876">Q4 · JAN–MAR · OPEN</div>
+        <h3 style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;margin:6px 0;color:#525363">Decided on evidence</h3>
+        <p style="font-size:12.5px;line-height:1.5;margin:0;color:#686876">Planned in Q3, from what Q2–Q3 proved.</p>
+      </div>
+    </div>
+    <p style="font-size:12px;color:#686876;margin:0 0 26px">The dashed quarter is a choice, not a gap. <span style="font-family:'Fira Code',monospace">Q4 planning happens in the Q3 review.</span></p>
+
+    <div style="margin-top:12px;font-size:12.5px;color:#525363;padding:12px 16px;background:#F1F6FD;border:1px solid #D1E0F8;border-radius:8px"><b style="color:#27283C">Zero-click context:</b> with ~60% of searches ending without a click, impressions can recover before clicks. Success is citations and qualified signups — not raw traffic.</div>
+
+    <!-- TRACK A header -->
+    <div style="display:flex;align-items:baseline;gap:12px;margin:36px 0 6px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:24px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0">Track A — core growth roadmap</h2>
+      <span style="font-family:'Fira Code',monospace;font-size:11px;color:#686876;letter-spacing:.06em">Jul–Sep · growth-initiated</span>
+    </div>
+    <p style="color:#525363;font-size:13.5px;margin:0 0 6px;max-width:740px">Every item sits under the tier where its success is judged. Acquisition and Visibility have metric owners; Conversion is owned by the whole team (each person has a paid-conversion goal); Authority and Efficiency are shared, one owner per item.</p>
+    <div style="margin:10px 0 4px;padding:11px 14px;background:#F1F6FD;border:1px solid #D1E0F8;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">Growth Team 3 alignment:</b> agent-ready website work is theirs; Team 1 contributes content, on-page inputs and developer-surface messaging.</div>
+
+    <!-- ACQUISITION -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-left:6px solid #1863DC;border-radius:12px;padding:14px 18px;margin:26px 0 10px">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin:0;color:#1863DC">Acquisition</h3>
+        <span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:9999px;white-space:nowrap;background:#ECF3FC;color:#1863DC">Single owner</span>
+        <span style="font-size:12.5px;font-weight:600;color:#27283C;white-space:nowrap;margin-left:auto">Shreya <span style="font-weight:400;color:#686876">· with team support</span></span>
+      </div>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid #F0F2F5;font-size:12px;color:#686876">Organic traffic · signups · generator, plugin, LP &amp; event signups</div>
+      <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> organic / direct paid signups <span style="font-family:'Fira Code',monospace">6,653 → 10,645 (+60% QoQ)</span> · generator policies <span style="font-family:'Fira Code',monospace">+40% QoQ</span> · plugin installs→signup baselined · priority LPs scoped &amp; started.</div>
+    </div>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#1863DC">A1</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Generator sites</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">The organic side of the generator funnel — the most direct line to the $1M generator goal</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 9px">Grow and convert the free policy-generator audience (cookiepolicygenerator.ai and siblings) into CMP signups.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> published policies · visit→signup · generator→CMP &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">policies +40% QoQ · visit→signup ≥5% · generator→CMP ≥20%</span></div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#1863DC">A2</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">WP plugin channel</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Promoted from experiment — optimise the listing fronting our biggest install base, make it agent-readable</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 8px">Our largest owned distribution channel, least worked last quarter.</p>
+        <p style="margin:0 0 4px"><b>(1) Listing optimisation</b> — readme, directory keywords, screenshots / assets.</p>
+        <p style="margin:0 0 9px"><b>(2) md plugin root</b> — agent-readable markdown from the plugin root, complementing Growth Team 3's agent-ready website initiative on the surface we control.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> plugin-page traffic · installs · install→signup &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">listing optimised + md plugin root live</span></div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#1863DC">A3</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Acquisition landing pages</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Search-demand, product, platform, developer and event pages built to bring qualified signups</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna · Hari</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 10px">These pages capture existing demand and convert high-intent visitors into signups. Their CRO layer reports into Conversion (C1).</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+          <div style="background:#F6F8FA;border-radius:8px;padding:11px 13px;font-size:12px;color:#525363"><b style="display:block;color:#27283C;font-family:'Poppins',sans-serif;font-size:12.5px;margin-bottom:4px">Product &amp; compliance demand</b>Enterprise, HubSpot (in progress), MCP, T&amp;C, policy generic, compliance checker (design done), DPDP, AccessiYes, Trust Center.</div>
+          <div style="background:#F6F8FA;border-radius:8px;padding:11px 13px;font-size:12px;color:#525363"><b style="display:block;color:#27283C;font-family:'Poppins',sans-serif;font-size:12.5px;margin-bottom:4px">Developer acquisition</b>Dev use-case LP revamp, developer resource LP, npm package LP, roadmap, dev documentation.</div>
+          <div style="background:#F6F8FA;border-radius:8px;padding:11px 13px;font-size:12px;color:#525363;grid-column:1 / -1"><b style="display:block;color:#27283C;font-family:'Poppins',sans-serif;font-size:12.5px;margin-bottom:4px">Platform, support &amp; events</b>Shopify / Wix LP update, support-forum SEO pages &amp; forms (scope from Rijo), online / offline event pages, webinar pages.</div>
+        </div>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> LP traffic · page-level signups · signup quality &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">priority LPs scoped, sequenced, first pages shipped in Q2</span></div>
+      </div>
+    </details>
+
+    <!-- VISIBILITY -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-left:6px solid #57BABD;border-radius:12px;padding:14px 18px;margin:26px 0 10px">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin:0;color:#3E9598">Visibility</h3>
+        <span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:9999px;white-space:nowrap;background:#E9F6F6;color:#3E9598">Single owner</span>
+        <span style="font-size:12.5px;font-weight:600;color:#27283C;white-space:nowrap;margin-left:auto">Litto</span>
+      </div>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid #F0F2F5;font-size:12px;color:#686876">Top-3 keywords · share of voice · AI-citation share (SoA) · AI referral traffic · cluster-level assists</div>
+      <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> priority clusters ≥ pre-migration top-3 · SoA <span style="font-family:'Fira Code',monospace">20% → 26%</span> by Sep · AI Search reporting live monthly.</div>
+    </div>
+
+    <details open="true" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#3E9598">V1</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">SEO &amp; search ecosystem</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Cluster-by-cluster recovery, migration governance, technical excellence</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Litto</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <div style="display:flex;gap:10px;margin-bottom:7px"><span style="font-family:'Fira Code',monospace;font-size:10.5px;color:#686876;font-weight:600;padding-top:3px;flex:none">V1.1</span><div><b>Search growth.</b> Priority clusters recovered to pre-migration top-3 (~54% of top-3 positions lost post-migration + March core update). Cluster baselines finalised once confirmed.</div></div>
+        <div style="display:flex;gap:10px;margin-bottom:7px"><span style="font-family:'Fira Code',monospace;font-size:10.5px;color:#686876;font-weight:600;padding-top:3px;flex:none">V1.2</span><div><b>Migration governance.</b> Every site change reviewed for SEO impact; monthly health reports to the team and Rijo.</div></div>
+        <div style="display:flex;gap:10px;margin-bottom:9px"><span style="font-family:'Fira Code',monospace;font-size:10.5px;color:#686876;font-weight:600;padding-top:3px;flex:none">V1.3</span><div><b>Technical excellence.</b> One reusable operational asset — candidate: an entity-clarity audit (org / product descriptions, sameAs schema, author pages) — plus 2 technical-validation POCs in staging.</div></div>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> top-3 count · cluster clicks · SoV &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">priority clusters ≥ pre-migration top-3</span></div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#3E9598">V2</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">AI visibility (GEO / AEO)</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Be cited where answers happen — AI Overviews, ChatGPT, Perplexity, Gemini</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Litto</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 9px">Stand up the <b>AI Search reporting framework</b> (monthly, business-critical topics); run 2 AI-search experiments, adopt 1; ship citation-optimised content on priority answer clusters. Baseline: <span style="font-family:'Fira Code',monospace">~20.17%</span> Share of Authority — weakest on T&amp;C / PII topics and high-intent ChatGPT prompts.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> SoA · AI-citation share · AI referral traffic &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">SoA 26% by Sep</span> (30%+ year-end) &nbsp;·&nbsp; <b style="color:#27283C">Dependency:</b> Ahrefs Brand Radar</div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#3E9598">V3</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Developer &amp; agent-readiness content</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Content-led visibility for MCP, skills, connectors and agent-ready topics</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna · Shreya</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 8px">Publish content on AI-adjacent and developer-led topics where CookieYes can credibly enter the conversation: agent-readiness for websites, when to use skills, connectors, MCP workflows, implementation patterns.</p>
+        <p style="margin:0 0 9px;color:#525363"><b style="color:#27283C">Ownership:</b> Visibility owns discovery; Safna / Shreya own the content; Litto supports topic validation, intent, schema and AEO checks. Strongest POV pieces feed Authority / social / newsletter.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> rankings / citations for agent-readiness &amp; developer topics · MCP assists · qualified visits &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">topic set scoped · first posts shipped in Q2</span></div>
+      </div>
+    </details>
+
+    <!-- CONVERSION -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-left:6px solid #2DAD70;border-radius:12px;padding:14px 18px;margin:26px 0 10px">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin:0;color:#2DAD70">Conversion</h3>
+        <span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:9999px;white-space:nowrap;background:#E5F5EC;color:#2DAD70">Shared</span>
+        <span style="font-size:12.5px;font-weight:600;color:#27283C;white-space:nowrap;margin-left:auto">Whole team <span style="font-weight:400;color:#686876">· each owns paid conversion</span></span>
+      </div>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid #F0F2F5;font-size:12px;color:#686876">Signup rate · generator→CMP · newsletter→signup · lead-gen conversions · on-page lift</div>
+      <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> every workstream defines its path to paid outcomes · conversion video on 2–3 money pages · LP roadmap scoped · first lead-gen live. <i>Safna's items flex with her compliance-pod load — Shreya backs up.</i></div>
+    </div>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#2DAD70">C1</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Money-page CRO &amp; conversion layer</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Recover and retrofit pages that attract demand; make A3 LPs convert once traffic arrives</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna → Shreya backup</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 8px">The content side of the clusters V1 recovers: recover commercial droppers → defend AI-pulse pages → refresh → prune. Every recovered page gets a <b>quotable block</b> (direct answer up top, question-led headings, FAQPage schema), a sharper CTA path, and <b>G2 reviews</b> as trust signals.</p>
+        <p style="margin:0 0 9px;color:#525363"><b style="color:#27283C">Conversion scope:</b> CTA hierarchy · form flow · trust blocks · signup attribution · on-page video placement · LP QA before launch · CRO learnings rolled back into A3 pages.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> commercial-page CTR · page-level signups · LP conversion rate &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">Tier-1 pages retrofitted · CRO layer ready for priority LPs · prune complete</span></div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#2DAD70">C2</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Video that converts</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Converts on money pages, teaches and builds trust everywhere else</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Hari</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 8px">Prioritised by conversion impact first, then channel reuse. One shoot feeds many surfaces.</p>
+        <ol style="margin:0 0 9px 18px;padding:0;color:#525363;line-height:1.6">
+          <li><b style="color:#27283C">Explainer &amp; demo videos</b> on money pages and generator sites to lift signups.</li>
+          <li><b style="color:#27283C">Translated videos</b> — Alconost for scripts and localisation workflow.</li>
+          <li><b style="color:#27283C">Short-form &amp; motion</b> for social; Instagram on the Authority-tier treatment.</li>
+          <li><b style="color:#27283C">Design support</b> for launches.</li>
+          <li><b style="color:#27283C">YouTube education</b> as a reusable evergreen asset.</li>
+        </ol>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> video assists · CTA clicks · on-page conversion movement · translated-video delivery &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">conversion video on 2–3 key money pages</span></div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#2DAD70">C3</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Lead-gen resources</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Gated guides, templates, checklists — direct conversion assets for the owned audience</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 9px">Built from the money-page and research work; distributed through the newsletter, social and site CTAs. The conversion end of the Authority tier's audience-building.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> lead-gen conversions · newsletter→signup &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">first resources live in Q2</span></div>
+      </div>
+    </details>
+
+    <!-- AUTHORITY -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-left:6px solid #955AE8;border-radius:12px;padding:14px 18px;margin:26px 0 10px">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin:0;color:#955AE8">Authority</h3>
+        <span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:9999px;white-space:nowrap;background:#F2ECFE;color:#955AE8">Shared</span>
+        <span style="font-size:12.5px;font-weight:600;color:#27283C;white-space:nowrap;margin-left:auto">Shreya + Safna <span style="font-weight:400;color:#686876">· Safna's anchor tier</span></span>
+      </div>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid #F0F2F5;font-size:12px;color:#686876">Referring domains · brand mentions · newsletter subscribers</div>
+      <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> research topic + sign-off + methodology locked · newsletter <span style="font-family:'Fira Code',monospace">485 → ~1,500</span> · voice guide shipped · Wikipedia kicked off.</div>
+    </div>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#955AE8">AU1</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Own research</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Citable reports on consent data only CookieYes has — the source journalists and AI assistants cite</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 9px">Original research on proprietary data from a ~1M-site install base — something no competitor can copy. Q2 is the build quarter: topic chosen against the data, <b>legal + data-team sign-off</b> (the long pole, week 1), methodology locked, data pulled. <b>Report #1 publishes in Q3</b> as an integrated campaign.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> referring domains &amp; mentions per report · report-attributed signups &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">topic + sign-off + methodology locked in Q2</span></div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#955AE8">AU2</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">PR &amp; newsletter</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Regulation-moment PR year-round; the Privacy Digest grown from 485 subscribers</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 9px">Research <i>creates</i> the flagship asset; this item <i>distributes</i> — digital PR on regulation moments, article content, referring domains and mentions, the News &amp; media page, and the newsletter as the owned audience everything feeds.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> referring domains · mentions · newsletter subs &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">newsletter 485 → ~1,500</span></div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#955AE8">AU3</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Brand voice &amp; social</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">One recognisable voice, then channels — each with one job and one metric</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna · Hari (IG)</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 8px"><b>Voice first:</b> a CookieYes voice guide shipped in Q2 — wit through observation, never boastful, tone scaling with topic weight.</p>
+        <p style="margin:0 0 9px"><b>Then channels:</b> LinkedIn primary (brand page + a named column, e.g. <i>Banner of the Week</i>), Facebook repurposed, Instagram personality-forward (Hari), X for announcements, forums / Reddit for genuine participation. Strongest V3 pieces become LinkedIn POV posts and newsletter notes. Safna owns the calendar; Shreya reviews.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> voice guide live · branded-search lift · saves, ICP-fit comments, profile→site clicks &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">guide shipped · channels on treatments</span></div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#955AE8">AU4</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Wikipedia presence</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Potentially a unified CookieYes page — entity authority that LLM answers cite heavily</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna · Nidha · Litto</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 9px">Agency-supported (Nidha), built from independent coverage — press and the research reports once they exist — with COI disclosure done properly. Litto supplies entity signals so page and site reinforce each other.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> page live · citation pickup &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">kicked off in Q2, live in Q3</span></div>
+      </div>
+    </details>
+
+    <!-- EFFICIENCY -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-left:6px solid #CC8000;border-radius:12px;padding:14px 18px;margin:26px 0 10px">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin:0;color:#CC8000">Efficiency</h3>
+        <span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:9999px;white-space:nowrap;background:#FFF6E5;color:#CC8000">Shared</span>
+        <span style="font-size:12.5px;font-weight:600;color:#27283C;white-space:nowrap;margin-left:auto">Whole team</span>
+      </div>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid #F0F2F5;font-size:12px;color:#686876">Acquisition efficiency · hours saved via AI · validated learnings promoted to production</div>
+      <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> ≥1 agent per role · hours-saved baseline set · staging + sandbox live · first validated tactics promoted.</div>
+    </div>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#CC8000">E1</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">AI-assisted operations</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Every role runs ≥1 agent — hours move from execution to strategy and craft</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Whole team</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 8px">Four named workstreams: <b>content automation</b> · <b>video script + content + asset generation</b> · <b>SEO tech + AIO automation</b> · <b>workflows</b>.</p>
+        <p style="margin:0 0 9px;color:#525363;font-size:12.5px"><b style="color:#27283C">Not starting from zero</b> — already built: content pipeline (agentic layer pending), translation workflow skill, automated SEO updates to Slack, review assistant, Privacy Roundup / newsletter automation. Q2 hardens and extends these.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> agents live per role · hours saved &nbsp;·&nbsp; <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">≥1 agent per role by Q3</span></div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#CC8000">E2</span>
+        <span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Staging test environment</span><span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;padding:2px 8px;border-radius:9999px;background:#FFF6E5;color:#CC8000">BET</span></span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">A sandbox where SEO / AIO patterns are validated before production</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Litto</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 9px">Pre-validated changes ship faster and safer, and make every future test cheap. Hosts V1.3's technical POCs.</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> POCs validated → shipped &nbsp;·&nbsp; <b style="color:#27283C">Time-box:</b> Q2</div>
+      </div>
+    </details>
+
+    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+        <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#CC8000">E3</span>
+        <span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Next.js sandbox</span><span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;padding:2px 8px;border-radius:9999px;background:#FFF6E5;color:#CC8000">BET</span></span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">A live testbed for content + technical-SEO experiments — winners promoted to prod</span></span>
+        <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Whole team</span>
+        <span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
+      </summary>
+      <div style="padding:2px 18px 15px 62px;font-size:13.5px">
+        <p style="margin:0 0 9px">Measured by <b>validated learnings promoted to production</b> — if a tactic never graduates to cookieyes.com, the experiment isn't paying rent. Programmatic SEO stays backlogged for Q3+; new bets enter through the propose / kill rhythm (max two live, one metric, a kill date each).</p>
+        <div style="padding:9px 13px;background:#F6F8FA;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> validated learnings → promoted &nbsp;·&nbsp; <b style="color:#27283C">Time-box:</b> <span style="font-family:'Fira Code',monospace">Q2 build, Q3 first promotions</span></div>
+      </div>
+    </details>
+
+    <!-- Ad hoc + stop -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-left:4px solid #1863DC;border-radius:12px;padding:15px 18px;margin-top:24px;font-size:13px;color:#525363">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin:0 0 7px">Ad hoc &amp; cross-team guardrail — 70 / 30</h3>
+      <p style="margin:0 0 7px;line-height:1.55">About <b style="color:#27283C">70%</b> of capacity goes to planned roadmap work; up to <b style="color:#27283C">30%</b> to high-priority ad hoc requests from Product, Engineering, Partnerships, Brand, Agency, events, launches and leadership.</p>
+      <p style="margin:0;line-height:1.55">Ad hoc work must support ARR, acquisition, visibility, conversion, authority or urgent risk reduction. Beyond the buffer, requests are queued, traded off, or escalated for reprioritisation.</p>
+    </div>
+    <div style="background:#fff;border:1px solid #E9E9EB;border-left:4px solid #27283C;border-radius:12px;padding:14px 18px;margin-top:12px;font-size:13px"><b style="font-family:'Poppins',sans-serif;color:#27283C">What we stop.</b> <span style="color:#525363">Net-new blog volume for its own sake · sitewide optimisation passes · unscoped support work · zombie experiments with no metric or kill date.</span></div>
+
+    <!-- TRACK B -->
+    <div style="display:flex;align-items:baseline;gap:12px;margin:40px 0 6px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:24px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0">Track B — product support</h2>
+      <span style="font-family:'Fira Code',monospace;font-size:11px;color:#686876;letter-spacing:.06em">supporting, not initiating</span>
+    </div>
+    <p style="color:#525363;font-size:13.5px;margin:0 0 12px;max-width:740px">Triggered by the product organisation. Growth contributes amplification and feedback; the initiative doesn't sit inside the core Track A plan. Coordinated by Shreya, executed by all.</p>
+    <div style="background:#fff;border:1px solid #E9E9EB;border-left:6px solid #57BABD;border-radius:12px;padding:6px 18px 14px">
+      <div style="border-bottom:1px solid #F0F2F5;padding:12px 0;font-size:13px;display:flex;gap:12px;align-items:baseline"><span style="flex:1"><b style="color:#27283C">B1 · Release amplification.</b> <span style="color:#525363">Every release runs as an integrated campaign — content, social, video, PR, Product Hunt — including product's AI releases (MCP server). Signups attributed per launch report into Acquisition.</span></span><span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · all</span></div>
+      <div style="padding:12px 0 4px;font-size:13px;display:flex;gap:12px;align-items:baseline"><span style="flex:1"><b style="color:#27283C">B2 · Product feedback channel.</b> <span style="color:#525363">We test features as real users and turn UX gaps into content and structured product input — enabling work that builds trust and content fuel, not a scored tier.</span></span><span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Whole team</span></div>
+    </div>
+
+    <!-- Q3 / Q4 -->
+    <div style="display:flex;align-items:baseline;gap:12px;margin:40px 0 12px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:24px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0">Q3 — directional</h2>
+      <span style="font-family:'Fira Code',monospace;font-size:11px;color:#686876;letter-spacing:.06em">Oct–Dec · firmed up in the Q2 review</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;color:#3E9598">Visibility</span><span style="color:#525363">Scale recovery to next clusters; governance stays; SoA toward <span style="font-family:'Fira Code',monospace">30%+</span>; developer content expands.</span></div>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;color:#955AE8">Authority</span><span style="color:#525363">Report #1 publishes as an integrated campaign; V3 POV feeds social / newsletter; Wikipedia live; report #2 scoped.</span></div>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;color:#1863DC">Acquisition</span><span style="color:#525363">Plugin channel scales on Q2's baseline; priority LPs move from scope to build, test and conversion lift.</span></div>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;color:#2DAD70">Conversion</span><span style="color:#525363">Video library expands across money pages; LP revamp continues on confirmed scope.</span></div>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;color:#CC8000">Efficiency</span><span style="color:#525363">Sandbox winners promoted to production; programmatic SEO enters if recovery is stable.</span></div>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;color:#686876">Product support</span><span style="color:#525363">Amplification continues as integrated campaigns; feedback channel compounds.</span></div>
+    </div>
+    <div style="border:1.5px dashed #BEBFC5;border-radius:12px;padding:16px 20px;margin-top:12px;font-size:13.5px;color:#525363"><b style="color:#27283C;font-family:'Poppins',sans-serif">Q4 — planned in the Q3 review, from evidence.</b> The questions that will decide it:
+      <ul style="margin:8px 0 0 18px;padding:0">
+        <li style="margin-bottom:4px">Which clusters recovered — and which needed a different play?</li>
+        <li style="margin-bottom:4px">Did AI visibility translate into referral traffic and signups?</li>
+        <li style="margin-bottom:4px">What did report #1 earn — links, mentions, citations, pipeline?</li>
+        <li style="margin-bottom:4px">Which bets survived their kill dates, and which sandbox tactics graduated to production?</li>
+      </ul>
+    </div>
+
+    <!-- Dependencies -->
+    <div style="display:flex;align-items:baseline;gap:12px;margin:40px 0 12px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:24px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0">Dependencies</h2>
+      <span style="font-family:'Fira Code',monospace;font-size:11px;color:#686876;letter-spacing:.06em">what we need</span>
+    </div>
+    <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:8px 18px">
+      <ul style="list-style:none;margin:0;padding:0;font-size:13px">
+        <li style="padding:8px 0;border-bottom:1px solid #F0F2F5;color:#525363"><b style="color:#27283C">Tools (GEO / Video)</b> — ask to Rijo, week 1</li>
+        <li style="padding:8px 0;border-bottom:1px solid #F0F2F5;color:#525363"><b style="color:#27283C">Alconost</b> — translated-video scripts and localisation workflow</li>
+        <li style="padding:8px 0;border-bottom:1px solid #F0F2F5;color:#525363"><b style="color:#27283C">R&amp;D</b> — workflow &amp; experiment setup, data points</li>
+        <li style="padding:8px 0;border-bottom:1px solid #F0F2F5;color:#525363"><b style="color:#27283C">Legal + data-team sign-off</b> — research programme (the long pole)</li>
+        <li style="padding:8px 0;border-bottom:1px solid #F0F2F5;color:#525363"><b style="color:#27283C">Data access</b> — qualified-signups baseline</li>
+        <li style="padding:8px 0;border-bottom:1px solid #F0F2F5;color:#525363"><b style="color:#27283C">Engineering</b> — technical-SEO fixes; LP builds / forms</li>
+        <li style="padding:8px 0;border-bottom:1px solid #F0F2F5;color:#525363"><b style="color:#27283C">Agency (Team 2)</b> — Wikipedia, content push, campaign collabs</li>
+        <li style="padding:8px 0;border-bottom:1px solid #F0F2F5;color:#525363"><b style="color:#27283C">Ad hoc capacity</b> — the 30% buffer for urgent cross-team work</li>
+        <li style="padding:8px 0;color:#525363"><b style="color:#27283C">Growth Team 3 / Product</b> — agent-ready website initiative, documentation inputs, developer reqs, design</li>
+      </ul>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============================ OKRs ============================ -->
+  <sc-if value="{{ isOkrs }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="OKRs">
+
+    <div style="margin-top:24px;background:#F1F6FD;border:1px solid #D1E0F8;border-radius:12px;padding:16px 18px;font-size:13px;color:#525363;line-height:1.6">
+      <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#686876;margin-bottom:6px">Draft · OKRs &amp; tier mapping · FY2026–27</div>
+      <b style="color:#27283C;font-family:'Poppins',sans-serif;font-size:16px;display:block;margin-bottom:5px">OKRs, simplified</b>
+      <b style="color:#27283C">4 objectives, 9 KRs.</b> Acquisition has 2 KRs, Visibility has 3 (SEO / search and AI visibility need separate measurement), Authority has 2 output / leading KRs, and the growth operating system has 2. Sheet-dependent numbers stay blank until confirmed.
+    </div>
+
+    <!-- O1 -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden;margin-top:14px">
+      <div style="padding:14px 18px;border-bottom:1px solid #F0F2F5">
+        <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#1863DC;margin-bottom:5px">Objective 1 · Acquisition</div>
+        <h3 style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:#27283C;margin:0;line-height:1.25">Own the organic/direct paid-signup engine that funds ARR growth</h3>
+      </div>
+      <table class="cy-tbl"><tbody>
+        <tr><td style="width:120px"><b>Lagging KR</b></td><td>Grow new paid subscriptions attributed to organic/direct from <strong>6,653 (Q1) to 10,645 (Q2), +60% QoQ, by 30 Sep 2026.</strong> Source: <strong>Stripe</strong> (new-paid-subscription event)</td></tr>
+        <tr><td><b>Leading KR</b></td><td>Ship and track agreed Q2 acquisition work across priority LPs, generator surfaces, plugin channel, events / webinars, release amplification and conversion-focused video, with owner, CTA path and attribution defined for each.</td></tr>
+      </tbody></table>
+      <div style="padding:10px 18px;background:#F6F8FA;font-size:12px;color:#686876;line-height:1.5"><b style="color:#27283C">Track B note:</b> Release amplification counts here when launches create attributable signups, trials, paid signups or assisted conversions.</div>
+    </div>
+
+    <!-- O2 -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden;margin-top:14px">
+      <div style="padding:14px 18px;border-bottom:1px solid #F0F2F5">
+        <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#3E9598;margin-bottom:5px">Objective 2 · Visibility</div>
+        <h3 style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:#27283C;margin:0;line-height:1.25">Rebuild CookieYes visibility across search, AI and developer discovery</h3>
+      </div>
+      <table class="cy-tbl"><tbody>
+        <tr><td style="width:120px"><b>Lagging KR 1</b><br><span style="font-size:11px;color:#686876">SEO / search</span></td><td>Improve priority SEO / search visibility from <b>____</b> to <b>____</b>, via confirmed cluster metrics — top-3 count, SoV, qualified organic visits, signup assists.</td></tr>
+        <tr><td><b>Lagging KR 2</b><br><span style="font-size:11px;color:#686876">AI visibility</span></td><td>Improve AI visibility by <b>10%</b>, via SoA, AI citation share, AI referral traffic and AI-assisted signup paths where trackable.</td></tr>
+        <tr><td><b>Leading KR</b></td><td>Complete agreed Q2 visibility actions for priority clusters — SEO recovery inputs, migration / technical health reporting, AI visibility reporting, developer / agent-readiness content, cluster-relevant documentation.</td></tr>
+      </tbody></table>
+      <div style="padding:10px 18px;background:#F6F8FA;font-size:12px;color:#686876;line-height:1.5"><b style="color:#27283C">Scope guardrail:</b> Documentation supports the relevant cluster — it is not a separate SEO / GEO / AEO plan this quarter.</div>
+    </div>
+
+    <!-- O3 -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden;margin-top:14px">
+      <div style="padding:14px 18px;border-bottom:1px solid #F0F2F5">
+        <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#955AE8;margin-bottom:5px">Objective 3 · Authority</div>
+        <h3 style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:#27283C;margin:0;line-height:1.25">Build authority through owned research, PR and credible POV distribution</h3>
+      </div>
+      <table class="cy-tbl"><tbody>
+        <tr><td style="width:120px"><b>Output KR</b></td><td>Complete <b>one production-ready owned research asset</b> for Q2 publication — approved topic, signed-off methodology, confirmed data feasibility, final draft, distribution plan.</td></tr>
+        <tr><td><b>Leading KR</b></td><td>Run <b>3 PR / newsworthy pushes</b> in Q2, each with a clear angle, target channel list, owner, publishing plan, follow-up tracker and supporting distribution assets including video.</td></tr>
+      </tbody></table>
+      <div style="padding:10px 18px;background:#F6F8FA;font-size:12px;color:#686876;line-height:1.5"><b style="color:#27283C">Measurement note:</b> Brand POV, newsletter, social, forums and entity / Wikipedia work support this, but carry no numeric Q2 KRs until baselines are confirmed.</div>
+    </div>
+
+    <!-- O4 -->
+    <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden;margin-top:14px">
+      <div style="padding:14px 18px;border-bottom:1px solid #F0F2F5">
+        <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#CC8000;margin-bottom:5px">Objective 4 · Growth operating system</div>
+        <h3 style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:#27283C;margin:0;line-height:1.25">Make Team 1 execution faster, more measurable and easier to repeat</h3>
+      </div>
+      <table class="cy-tbl"><tbody>
+        <tr><td style="width:120px"><b>Leading KR</b></td><td>Run <b>10</b> structured experiments or workflow improvements across content, SEO, video, translation, reporting and campaigns — each with owner, goal, metric and review date.</td></tr>
+        <tr><td><b>Lagging KR</b></td><td>Turn <b>4</b> successful experiments or workflows into repeatable team processes, based on measured impact on speed, quality, visibility, signups, conversion or learning.</td></tr>
+      </tbody></table>
+      <div style="padding:10px 18px;background:#F6F8FA;font-size:12px;color:#686876;line-height:1.5"><b style="color:#27283C">Capacity note:</b> The 70 / 30 model stays a roadmap guardrail and intake rule, not an OKR.</div>
+    </div>
+
+    <!-- Tier mapping -->
+    <div style="margin-top:28px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:20px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0 0 12px">Tier mapping</h2>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden">
+        <table class="cy-tbl">
+          <thead><tr><th style="width:18%">Tier</th><th style="width:14%">Maps to</th><th>Core metric</th></tr></thead>
+          <tbody>
+            <tr><td><b style="color:#1863DC">Acquisition</b></td><td>O1</td><td>Organic / direct paid signups: Q1 <b>6,653</b> → Q2 <b>10,645</b></td></tr>
+            <tr><td><b style="color:#2DAD70">Conversion</b></td><td>O1 + O2</td><td>CTA paths, page-level conversion, video placements, signup assists, paid-conversion contribution where attributable</td></tr>
+            <tr><td><b style="color:#3E9598">Visibility</b></td><td>O2</td><td>Top-3 count · SoV · SoA · AI citations / referrals · cluster-level signup assists</td></tr>
+            <tr><td><b style="color:#955AE8">Authority</b></td><td>O3</td><td>Owned research production-ready · 3 PR pushes · POV / newsletter / video / entity work tracked separately</td></tr>
+            <tr><td><b style="color:#CC8000">Efficiency</b></td><td>O4</td><td>Structured experiments · repeatable workflows · execution speed / quality improvements</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Track B mapping -->
+    <div style="margin-top:24px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:20px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0 0 12px">Track B mapping</h2>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden">
+        <table class="cy-tbl">
+          <thead><tr><th style="width:40%">Track B item</th><th>Supports</th></tr></thead>
+          <tbody>
+            <tr><td><b>Release amplification</b></td><td>O1 + O2 + O3 as relevant</td></tr>
+            <tr><td><b>Product feedback channel</b></td><td>O1 + O2 + O4 as relevant</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <footer style="margin-top:44px;padding-top:16px;border-top:1px solid #E1E7EE;font-size:12px;color:#686876;display:flex;gap:14px;flex-wrap:wrap">
+    <span>CookieYes · Growth - Team 1 Roadmap FY2026–27</span>
+    <span style="font-family:'Fira Code',monospace">Track A / Track B · classified by tier</span>
+    <span style="margin-left:auto">Companions: Leadership Review · Ownership Mapping · Owner Briefs</span>
+  </footer>
+
 </div>
 
-<!-- RUNWAY -->
-<div id="d-runway" style="display:grid;grid-template-columns:1.4fr 1fr .8fr;gap:12px;margin:32px 0 8px">
-<div style="border-radius:12px;padding:18px;min-height:126px;background:#1863DC;color:#fff;box-shadow:0 2px 6px 0 rgba(24,99,220,0.12)">
-<div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;letter-spacing:.1em;color:#D1E0F8">Q2 · JUL–SEP · DETAILED</div>
-<h3 style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;margin:6px 0;color:#fff">Recover &amp; build</h3>
-<p style="font-size:12.5px;line-height:1.55;margin:0;color:#ECF3FC">Win back the rankings and pages that convert; stand up AI visibility, the research programme, the plugin channel, and the experiment rhythm.</p>
-</div>
-<div style="border-radius:12px;padding:18px;min-height:126px;background:#fff;border:1px solid #E9E9EB">
-<div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;letter-spacing:.1em;color:#1863DC">Q3 · OCT–DEC · DIRECTIONAL</div>
-<h3 style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;margin:6px 0;color:#27283C">Scale &amp; authority</h3>
-<p style="font-size:12.5px;line-height:1.55;margin:0;color:#525363">Scale what recovery won, publish research report #1, push SoA toward 30%, let the surviving bets grow.</p>
-</div>
-<div style="border-radius:12px;padding:18px;min-height:126px;background:transparent;border:1.5px dashed #BEBFC5">
-<div style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;letter-spacing:.1em;color:#686876">Q4 · JAN–MAR · OPEN</div>
-<h3 style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;margin:6px 0;color:#525363">Decided on evidence</h3>
-<p style="font-size:12.5px;line-height:1.55;margin:0;color:#686876">Planned in Q3, from what Q2–Q3 actually proved.</p>
-</div>
-</div>
-<p style="font-size:12px;color:#686876;margin:0 0 30px">The dashed quarter is a choice, not a gap. <span style="font-family:'Fira Code',monospace">Q4 planning happens in the Q3 review.</span></p>
-<!-- RULES -->
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0 0">
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:12.5px;color:#525363"><b style="color:#27283C">Everything carries a metric</b> — and a line to business impact.</div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:12.5px;color:#525363"><b style="color:#27283C">Every area converts</b> — each core area holds at least one objective that brings signups.</div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:12.5px;color:#525363"><b style="color:#27283C">Experimentation is built in</b> — not run on the side.</div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:12px 14px;font-size:12.5px;color:#525363"><b style="color:#27283C">Integrated campaigns, not isolated posts</b> — big moments run across content + PR + social + video + newsletter together.</div>
-</div>
-<div style="margin-top:12px;font-size:12.5px;color:#525363;padding:12px 16px;background:#F1F6FD;border:1px solid #D1E0F8;border-radius:8px"><b style="color:#27283C">Zero-click context:</b> with ~60% of searches ending without a click, impressions can recover before clicks. Success is citations and qualified signups — not raw traffic.</div>
-<!-- ============ TRACK A / Q2 BY TIER ============ -->
-<div class="cy-track-a-box" id="track-a">
-<div class="cy-track-a-head">
-<div>
-<div class="cy-track-a-meta">Track A · growth-initiated · primary roadmap · Jul–Sep</div>
-<h2>Q2 core growth roadmap</h2>
-<p>This is the main team-owned plan. Growth Team 1 initiates the work, owns the operating rhythm, and reviews success through five measured tiers.</p>
-</div>
-<div aria-label="Track A tiers" class="cy-track-chip-row">
-<span class="cy-track-chip" style="color:#1863DC">A · Acquisition</span>
-<span class="cy-track-chip" style="color:#3E9598">V · Visibility</span>
-<span class="cy-track-chip" style="color:#2DAD70">C · Conversion</span>
-<span class="cy-track-chip" style="color:#955AE8">AU · Authority</span>
-<span class="cy-track-chip" style="color:#CC8000">E · Efficiency</span>
-</div>
-</div>
-<div class="cy-track-a-body">
-<div aria-label="Track A tier map" class="cy-track-map">
-<div class="cy-track-map-card" style="border-top:4px solid #1863DC"><b>Acquisition</b>Entry points and signup generation.</div>
-<div class="cy-track-map-card" style="border-top:4px solid #57BABD"><b>Visibility</b>Rankings, AI/search citations, topical coverage, and agent-ready website support. Documentation is included within relevant clusters only.</div>
-<div class="cy-track-map-card" style="border-top:4px solid #2DAD70"><b>Conversion</b>Paid-conversion outcomes from every workstream, plus CRO, forms, video, lead-gen, and trust signals.</div>
-<div class="cy-track-map-card" style="border-top:4px solid #955AE8"><b>Authority</b>Research, PR, newsletter, social POV, entity trust.</div>
-<div class="cy-track-map-card" style="border-top:4px solid #CC8000"><b>Efficiency</b>AI workflows, staging tests, sandbox learnings.</div>
-</div>
-<p style="color:#525363;font-size:13.5px;margin:0 0 12px;max-width:830px">Every Track A work item sits under the tier where its success is judged. <b style="color:#27283C">Acquisition and Visibility have metric owners; content-led items inside Visibility carry separate content owners.</b> Conversion is owned by the whole team: every person has a paid-conversion goal tied to the work they drive. Authority and Efficiency are shared, with each item owned by one person.</p>
-<div style="margin:0 0 20px;padding:12px 14px;background:#F1F6FD;border:1px solid #D1E0F8;border-radius:10px;font-size:12.8px;color:#525363"><b style="color:#27283C">Growth Team 3 alignment:</b> agent-ready website work; Growth Team 1 contributes content, on-page inputs, and developer-surface messaging where relevant.</div>
-<!-- ACQUISITION -->
-<section id="d-acquisition">
-<div class="cy-tband" style="border-radius:12px;padding:15px 18px;margin:22px 0 10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:#fff;background:#1863DC">
-<h3 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:600;margin:0;flex:none;color:#fff">Acquisition</h3>
-<span style="font-size:12px;opacity:.88;flex:1;min-width:220px">Organic traffic · signups · generator, plugin, LP &amp; event signups</span>
-<span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:9999px;white-space:nowrap;background:rgba(255,255,255,.18)">Single owner</span>
-<span style="font-size:12.5px;font-weight:600;white-space:nowrap">Shreya <span style="font-weight:400;opacity:.8">· with team support</span></span>
-</div>
-<p style="font-size:12.5px;color:#525363;margin:0 0 12px 4px"><b style="color:#27283C">Q2 tier target:</b> organic/direct paid signups <span style="font-family:'Fira Code',monospace">6,653 → 10,645 (+60% QoQ)</span> · generator policies <span style="font-family:'Fira Code',monospace">+40% QoQ</span> · plugin installs→signup baselined · priority acquisition LPs scoped/started · every release's signups attributed.</p>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#1863DC">A1</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Generator sites</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">The organic side of the generator funnel — the most direct line to the $1M generator goal</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Grow and convert the free policy-generator audience (cookiepolicygenerator.ai and siblings) into CMP signups.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> published policies · visit→signup · generator→CMP  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">policies +40% QoQ · visit→signup ≥5% · generator→CMP ≥20%</span> <span style="font-size:11px;color:#686876">· conversion metrics also report into the Conversion tier</span></div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#1863DC">A2</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">WP plugin channel</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Promoted from experiment — optimise the listing fronting our biggest install base, make it agent-readable</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Our largest owned distribution channel, least worked last quarter. <b>(1) Listing optimisation</b> — readme, directory keywords, screenshots/assets. <b>(2) md plugin root</b> — agent-readable markdown served from the plugin root, complementing Growth Team 3's agent-ready website initiative on the surface we control.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> plugin-page traffic · installs · install→signup  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">listing optimised + md plugin root live</span> · installs→signup baselined and improving.</div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#1863DC">A3</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Acquisition landing pages</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Search-demand, product, platform, developer, and event pages built to bring qualified signups</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna · Hari</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">These pages belong in Acquisition because their primary job is to capture existing demand, create new entry points, and convert high-intent visitors into signups. The CRO layer for these pages still reports into Conversion.</p>
-<div style="margin:10px 0 10px;padding:12px 14px;background:#F1F6FD;border:1px solid #D1E0F8;border-radius:8px;font-size:12.5px;color:#525363">
-<b style="color:#27283C">Acquisition LPs in scope:</b>
-<div class="cy-readable-grid">
-<div class="cy-readable-box"><b>Product &amp; compliance demand</b><div class="cy-pill-row"><span class="cy-pill">Enterprise plan</span><span class="cy-pill">HubSpot · in progress</span><span class="cy-pill">MCP landing page</span><span class="cy-pill">T&amp;C landing page</span><span class="cy-pill">Policy generic LP</span><span class="cy-pill">Compliance checker · design done</span><span class="cy-pill">DPDP LP</span><span class="cy-pill">AccessiYes web app product page</span><span class="cy-pill">Trust Center / certifications LP</span></div></div>
-<div class="cy-readable-box"><b>Developer acquisition</b><div class="cy-pill-row"><span class="cy-pill">Dev use-case LP revamp</span><span class="cy-pill">Developer resource landing page</span><span class="cy-pill">npm package landing page</span><span class="cy-pill">Roadmap</span><span class="cy-pill">Dev documentation</span></div></div>
-<div class="cy-readable-box"><b>Platform, support &amp; events</b><div class="cy-pill-row"><span class="cy-pill">Shopify / Wix LP update</span><span class="cy-pill">Support forum SEO landing pages &amp; forms</span><span class="cy-pill">Scope/full plan from Rijo</span><span class="cy-pill">Online/offline event pages</span><span class="cy-pill">Webinar pages</span></div></div>
-</div>
-</div>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> LP traffic · page-level signups · signup quality  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">priority LPs scoped, sequenced, and first pages shipped in Q2</span>.</div>
-</div>
-</details>
-</section>
-<!-- VISIBILITY -->
-<section id="d-visibility">
-<div class="cy-tband" style="border-radius:12px;padding:15px 18px;margin:22px 0 10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:#fff;background:#57BABD">
-<h3 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:600;margin:0;flex:none;color:#fff">Visibility</h3>
-<span style="font-size:12px;opacity:.9;flex:1;min-width:220px">Top-3 keywords · share of voice · AI-citation share (SoA) · AI referral traffic · cluster-level assists</span>
-<span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:9999px;white-space:nowrap;background:rgba(255,255,255,.2)">Single owner</span>
-<span style="font-size:12.5px;font-weight:600;white-space:nowrap">Litto</span>
-</div>
-<p style="font-size:12.5px;color:#525363;margin:0 0 12px 4px"><b style="color:#27283C">Q2 tier target:</b> priority clusters ≥ pre-migration top-3 · SoA <span style="font-family:'Fira Code',monospace">20% → 26%</span> by Sep · AI Search reporting live monthly. Documentation is covered only inside the priority clusters where it supports discovery.</p>
-<details open="true" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#3E9598">V1</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">SEO &amp; search ecosystem</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Cluster-by-cluster recovery, migration governance, technical excellence</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Litto</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<div style="display:flex;gap:10px;margin-bottom:8px"><span style="font-family:'Fira Code',monospace;font-size:10.5px;color:#686876;font-weight:600;padding-top:3px;flex:none">V1.1</span><div><b>Search growth.</b> Priority clusters recovered to pre-migration top-3 (~54% of top-3 positions lost post-migration + March core update). Cluster baselines are still being finalised; final numbers will be added once the priority-cluster baseline is confirmed.</div></div>
-<div style="display:flex;gap:10px;margin-bottom:8px"><span style="font-family:'Fira Code',monospace;font-size:10.5px;color:#686876;font-weight:600;padding-top:3px;flex:none">V1.2</span><div><b>Migration governance.</b> Every site change reviewed for SEO impact; monthly health reports to the team and Rijo.</div></div>
-<div style="display:flex;gap:10px;margin-bottom:8px"><span style="font-family:'Fira Code',monospace;font-size:10.5px;color:#686876;font-weight:600;padding-top:3px;flex:none">V1.3</span><div><b>Technical excellence.</b> One reusable operational asset the team adopts — candidate: an entity-clarity audit (consistent org/product descriptions, sameAs schema, author pages) — plus 2 technical-validation POCs in staging.</div></div>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> top-3 count · cluster clicks · SoV  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">priority clusters ≥ pre-migration top-3</span> <span style="font-size:11px;color:#686876">· page-level recovery &amp; conversion is C1 in the Conversion tier — run in step</span></div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#3E9598">V2</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">AI visibility (GEO / AEO)</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Be cited where answers happen — across AI Overviews, ChatGPT, Perplexity, Gemini</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Litto</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Stand up the <b>AI Search reporting framework</b> (monthly, business-critical topics); run 2 AI-search experiments, adopt 1 framework; ship citation-optimised content on priority answer clusters. Baseline: <span style="font-family:'Fira Code',monospace">~20.17%</span> Share of Authority — weakest on T&amp;C/PII topics and high-intent ChatGPT prompts.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> SoA · AI-citation share · AI referral traffic  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">SoA 26% by Sep</span> (30%+ year-end)  ·  <b style="color:#27283C">Dependency:</b> Ahrefs Brand Radar.</div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#3E9598">V3</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Developer &amp; agent-readiness content</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Content-led visibility for MCP, skills, connectors, and agent-ready website topics</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna · Shreya <span style="font-weight:400;opacity:.75">· Litto search input</span></span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Publish content on AI-adjacent and developer-led topics where CookieYes can credibly enter the conversation.</p>
-<ul class="cy-readable-list" style="margin:0 0 10px">
-<li><b style="color:#27283C">Topics:</b> agent-readiness for websites, when to use skills, connectors, MCP workflows, and implementation patterns. Documentation angles can be used where they naturally support the selected topic.</li>
-<li><b style="color:#27283C">Product route:</b> mention CookieYes MCP, developer resources, relevant documentation, and product surfaces where the context is natural.</li>
-<li><b style="color:#27283C">Ownership logic:</b> Visibility owns discovery; Safna/Shreya own the content; Litto supports topic validation, search intent, schema, and AEO checks.</li>
-<li><b style="color:#27283C">Growth Team 3 link:</b> their agent-ready website initiative sits within Track A's growth ecosystem; Team 1 supports with content, on-page inputs, and developer-surface messaging where relevant.</li>
-</ul>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> rankings/citations for agent-readiness and developer topics · MCP/developer-resource assists · qualified organic visits  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">topic set scoped · first posts shipped in Q2</span> <span style="font-size:11px;color:#686876">· strongest POV pieces feed Authority/social/newsletter</span></div>
-</div>
-</details>
-
-</section>
-<!-- CONVERSION -->
-<section id="d-conversion">
-<div class="cy-tband" style="border-radius:12px;padding:15px 18px;margin:22px 0 10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:#fff;background:#2DAD70">
-<h3 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:600;margin:0;flex:none;color:#fff">Conversion</h3>
-<span style="font-size:12px;opacity:.9;flex:1;min-width:220px">Signup rate · generator→CMP · newsletter→signup · lead-gen conversions · on-page lift</span>
-<span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:9999px;white-space:nowrap;background:rgba(255,255,255,.2)">Shared</span>
-<span style="font-size:12.5px;font-weight:600;white-space:nowrap">Whole team <span style="font-weight:400;opacity:.85">· each owns paid conversion from their efforts</span></span>
-</div>
-<p style="font-size:12.5px;color:#525363;margin:0 0 12px 4px"><b style="color:#27283C">Q2 tier target:</b> every workstream defines its conversion path to paid outcomes · conversion video on 2–3 money pages · landing-page roadmap scoped · first lead-gen resources live. <i>Example: Litto's visibility work should not stop at rankings or citations; it must connect to qualified traffic, signups, and paid conversions where attributable. Safna's items flex with her compliance-pod load — Shreya backs up.</i></p>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#2DAD70">C1</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Money-page CRO &amp; conversion layer</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Recover and retrofit pages that already attract demand; make A3 LPs convert once traffic arrives</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna → Shreya backup</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">The content side of the same clusters V1 recovers: recover commercial droppers → defend AI-pulse pages → refresh → prune dead weight. Every recovered page gets a <b>quotable block</b> (direct answer up top, question-led headings, FAQPage schema), sharper CTA path, forms where needed, and <b>G2 reviews</b> surfaced as trust signals. New acquisition LPs are scoped in A3; this item owns the conversion mechanics that make them pay off.</p>
-<div style="margin:10px 0 10px;padding:12px 14px;background:#F8FBF9;border:1px solid #D7F0E2;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">Conversion scope:</b> CTA hierarchy · form flow · trust blocks · signup attribution · on-page video placement · LP QA before launch · page-level CRO learnings rolled back into A3 pages.</div>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> commercial-page CTR · page-level signups · LP conversion rate  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">Tier-1 pages retrofitted · CRO layer ready for priority LPs · prune complete</span>.</div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#2DAD70">C2</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Video that converts</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Converts on money pages, teaches and builds trust everywhere else</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Hari</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Video work is prioritised by conversion impact first, then channel reuse. Detailed video impact metrics are defined through individual objectives and roll up to the team OKRs where attribution is available.</p>
-<ol style="margin:0 0 10px 18px;padding:0;color:#525363;line-height:1.6">
-<li style="margin-bottom:4px"><b style="color:#27283C">Explainer and demo videos</b> on money pages and generator sites to lift signups.</li>
-<li style="margin-bottom:4px"><b style="color:#27283C">Translated videos</b> — connect with Alconost for scripts and localisation workflow.</li>
-<li style="margin-bottom:4px"><b style="color:#27283C">Short-form and motion</b> for social channels; Instagram follows the Authority-tier treatment.</li>
-<li style="margin-bottom:4px"><b style="color:#27283C">Design support</b> for launches.</li>
-<li style="margin-bottom:0"><b style="color:#27283C">YouTube education</b> as a reusable evergreen asset. One shoot feeds many surfaces.</li>
-</ol>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> page-level video assists · CTA clicks · on-page conversion movement · translated-video delivery · short-form reach  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">conversion video on 2–3 key money pages</span> · translated-video script workflow set with Alconost.</div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#2DAD70">C3</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Lead-gen resources</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Gated guides, templates, checklists — direct conversion assets for the owned audience</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Built from the money-page and research work; distributed through the newsletter, social, and site CTAs. The conversion end of the Authority tier's audience-building.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> lead-gen conversions · newsletter→signup  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">first resources live in Q2</span>.</div>
-</div>
-</details>
-</section>
-<!-- AUTHORITY -->
-<section id="d-authority">
-<div class="cy-tband" style="border-radius:12px;padding:15px 18px;margin:22px 0 10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:#fff;background:#955AE8">
-<h3 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:600;margin:0;flex:none;color:#fff">Authority</h3>
-<span style="font-size:12px;opacity:.9;flex:1;min-width:220px">Referring domains · brand mentions · newsletter subscribers</span>
-<span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:9999px;white-space:nowrap;background:rgba(255,255,255,.2)">Shared</span>
-<span style="font-size:12.5px;font-weight:600;white-space:nowrap">Shreya + Safna <span style="font-weight:400;opacity:.85">· Safna's anchor tier</span></span>
-</div>
-<p style="font-size:12.5px;color:#525363;margin:0 0 12px 4px"><b style="color:#27283C">Q2 tier target:</b> research topic + sign-off + methodology locked · newsletter <span style="font-family:'Fira Code',monospace">485 → ~1,500</span> · voice guide shipped · Wikipedia kicked off.</p>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#955AE8">AU1</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Own research</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Citable reports on consent data only CookieYes has — the source journalists and AI assistants cite</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Original research on proprietary data from a ~1M-site install base — something no competitor can copy. Q2 is the build quarter: topic chosen against what the data supports, <b>legal + data-team sign-off</b> (the long pole, starts week 1), methodology locked, data pulled. <b>Report #1 publishes in Q3</b> as an integrated campaign — PR + social + video + newsletter together — and becomes the flagship source for Wikipedia and PR.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> referring domains &amp; mentions per report · report-attributed signups  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">topic + sign-off + methodology locked in Q2</span>.</div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#955AE8">AU2</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">PR &amp; newsletter</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Regulation-moment PR year-round; the Privacy Digest grown from 485 subscribers</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Research <i>creates</i> the flagship asset; this item <i>distributes</i> — digital PR angles on regulation moments, article content, referring domains and mentions, the News &amp; media page, and the newsletter as the owned audience that everything else feeds.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> referring domains · mentions · newsletter subs  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">newsletter 485 → ~1,500</span> (to calibrate) <span style="font-size:11px;color:#686876">· newsletter→signup reports into Conversion</span>.</div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#955AE8">AU3</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Brand voice &amp; social</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">One recognisable voice, then channels — each with one job and one metric</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna · Hari (IG)</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px"><b>Voice first:</b> a CookieYes voice guide shipped in Q2 — wit through observation, never boastful, tone scaling with topic weight. <b>Then the channels:</b> LinkedIn primary (brand page + a named editorial column, e.g. <i>Banner of the Week</i>), Facebook repurposed, Instagram personality-forward (Hari), X for short announcements, and <b>forums/Reddit</b> — genuine participation where LLMs learn. <b>AI/dev POV distribution:</b> the strongest V3 pieces become LinkedIn POV posts, newsletter notes, forum answers, and social explainers so the work builds brand authority, not just rankings. Safna owns the calendar and what goes where; Shreya reviews.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> voice guide live · branded-search lift · saves, ICP-fit comments, profile→site clicks  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">guide shipped · all channels on their treatments · V3 POV pieces distributed</span>.</div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#955AE8">AU4</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Wikipedia presence</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Potentially a unified CookieYes page — entity authority that LLM answers cite heavily</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna · Nidha · Litto</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Agency-supported (Nidha), built from independent coverage — press and the research reports once they exist — with COI disclosure done properly. Litto supplies entity signals (schema, sameAs, consistent descriptions) so the page and the site reinforce each other.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> page live · citation pickup  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">kicked off in Q2, live in Q3</span>.</div>
-</div>
-</details>
-</section>
-<!-- EFFICIENCY -->
-<section id="d-efficiency">
-<div class="cy-tband" style="border-radius:12px;padding:15px 18px;margin:22px 0 10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:#fff;background:#CC8000">
-<h3 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:600;margin:0;flex:none;color:#fff">Efficiency</h3>
-<span style="font-size:12px;opacity:.9;flex:1;min-width:220px">Acquisition efficiency · hours saved via AI · validated learnings promoted to production</span>
-<span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:9999px;white-space:nowrap;background:rgba(255,255,255,.2)">Shared</span>
-<span style="font-size:12.5px;font-weight:600;white-space:nowrap">Whole team</span>
-</div>
-<p style="font-size:12.5px;color:#525363;margin:0 0 12px 4px"><b style="color:#27283C">Q2 tier target:</b> ≥1 agent per role · hours-saved baseline set · staging + sandbox live · first validated tactics promoted.</p>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#CC8000">E1</span>
-<span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">AI-assisted operations</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Every role runs ≥1 agent — hours move from execution to strategy and craft</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Whole team</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Four named workstreams: <b>content automation</b> · <b>video script + content + asset generation</b> · <b>SEO tech + AIO automation</b> · <b>workflows</b>.</p>
-<p style="margin:0 0 9px;color:#525363;font-size:12.5px"><b style="color:#27283C">Not starting from zero</b> — already live or built: the full content pipeline (agentic layer pending) · translation workflow skill · automated SEO updates to Slack (needs improvement) · the review assistant (app + GPT + skill) · Privacy Roundup / newsletter automation (POC done, on the tool registry). Q2 hardens and extends these.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> agents live per role · hours saved  ·  <b style="color:#27283C">Target:</b> <span style="font-family:'Fira Code',monospace">≥1 agent per role by Q3</span>.</div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#CC8000">E2</span>
-<span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px"><span style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Staging test environment</span><span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;padding:2px 8px;border-radius:9999px;background:#FFF6E5;color:#CC8000">BET</span></span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">A sandbox where SEO/AIO patterns are validated before production</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Litto</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Pre-validated changes ship faster and safer, and make every future test cheap. Hosts V1.3's technical POCs.</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> POCs validated → shipped  ·  <b style="color:#27283C">Time-box:</b> Q2.</div>
-</div>
-</details>
-<details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 17px" style-hover="background:#F1F6FD">
-<span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:34px;flex:none;color:#CC8000">E3</span>
-<span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px"><span style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Next.js sandbox</span><span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;padding:2px 8px;border-radius:9999px;background:#FFF6E5;color:#CC8000">BET</span></span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">A live testbed for content + technical-SEO experiments — non-CookieYes content, winners promoted to prod</span></span>
-<span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Whole team</span>
-<span class="cy-chev" style="flex:none;color:#686876;transition:transform 160ms cubic-bezier(0.4,0,0.2,1);font-size:12px">▸</span>
-</summary>
-<div style="padding:2px 18px 16px 65px;font-size:13.5px">
-<p style="margin:0 0 9px">Measured by <b>validated learnings promoted to production</b> — if a tactic never graduates to cookieyes.com, the experiment isn't paying rent. Payoff surfaces downstream in Visibility and Conversion. Programmatic SEO stays backlogged for Q3+, after recovery is stable; new bets enter through the propose/kill rhythm in sprint (max two live, one metric, a kill date each).</p>
-<div style="margin-top:8px;padding:10px 14px;background:#F1F6FD;border-radius:8px;font-size:12.5px;color:#525363"><b style="color:#27283C">KPI:</b> validated learnings → promoted  ·  <b style="color:#27283C">Time-box:</b> <span style="font-family:'Fira Code',monospace">Q2 build, Q3 first promotions</span>.</div>
-</div>
-</details>
-</section>
-</div>
-</div>
-<div id="ad-hoc" style="background:#fff;border:1px solid #E9E9EB;border-left:4px solid #1863DC;border-radius:12px;padding:16px 18px;margin-top:24px;font-size:13px;color:#525363">
-<h3 style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;color:#27283C;margin:0 0 8px">Ad hoc and cross-team work guardrail</h3>
-<p style="margin:0 0 8px;line-height:1.55">Team 1 will operate on a <b style="color:#27283C">70/30 capacity model</b>: about <b style="color:#27283C">70% for planned roadmap work</b> and up to <b style="color:#27283C">30% for high-priority ad hoc requests</b> from Product, Engineering, Partnerships, Brand, Agency, events, launches, leadership asks, and other Growth teams.</p>
-<p style="margin:0;line-height:1.55">Ad hoc work must directly support ARR contribution, acquisition, visibility, conversion, authority, or urgent risk reduction. Requests beyond the 30% buffer are not absorbed silently; they are queued, traded off against existing roadmap work, or escalated for leadership reprioritisation.</p>
-</div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-left:4px solid #27283C;border-radius:12px;padding:15px 18px;margin-top:24px;font-size:13px"><b style="font-family:'Poppins',sans-serif;color:#27283C">What we stop.</b> <span style="color:#525363">Net-new blog volume for its own sake · sitewide optimisation passes · unscoped support work · zombie experiments with no metric or kill date.</span></div>
-<!-- TRACK B -->
-<div class="cy-track-b-box" id="track-b">
-<div class="cy-track-b-head">
-<div>
-<div class="cy-track-b-meta">Track B · product-management support · supporting, not initiating</div>
-<h2>Product-management support</h2>
-<p>Work triggered by the product organisation. Growth contributes release amplification and product feedback, but the initiative does not sit inside the core growth-owned Track A plan.</p>
-</div>
-<span class="cy-track-b-owner">Coordinated by Shreya<br/>executed by all</span>
-</div>
-<div class="cy-track-b-body">
-<div class="cy-track-b-item"><span><b>B1 · Release amplification.</b> Every product release runs as an integrated campaign through our engines — content, social, video, PR, Product Hunt — including product's AI releases such as the MCP server. Signups attributed per launch report into Acquisition.</span><span class="cy-track-b-owner">Shreya · all</span></div>
-<div class="cy-track-b-item"><span><b>B2 · Product feedback channel.</b> We test features as real users and turn UX gaps into content and structured product input — enabling work that builds trust and content fuel, not a scored tier.</span><span class="cy-track-b-owner">Whole team</span></div>
-</div>
-</div>
-<!-- Q3 -->
-<div id="q3" style="display:flex;align-items:baseline;gap:12px;margin:48px 0 14px">
-<h2 style="font-family:'Poppins',sans-serif;font-size:26px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0">Q3 — directional</h2>
-<span style="font-family:'Fira Code',monospace;font-size:11px;color:#686876;letter-spacing:.06em">Oct–Dec · firmed up in the Q2 review</span>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:13px 15px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;color:#3E9598">Visibility</span><span style="color:#525363">Scale recovery to the next clusters; governance stays; documentation is improved only where it belongs to the cluster; SoA toward <span style="font-family:'Fira Code',monospace">30%+</span>; developer/agent-readiness content expands.</span></div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:13px 15px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;color:#955AE8">Authority</span><span style="color:#525363">Report #1 publishes as an integrated campaign — the quarter's authority moment; V3 POV content feeds social/newsletter; Wikipedia live; report #2 scoped.</span></div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:13px 15px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;color:#1863DC">Acquisition</span><span style="color:#525363">Plugin channel scales on Q2's baseline; priority landing pages move from scope to build, test, and conversion lift.</span></div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:13px 15px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;color:#2DAD70">Conversion</span><span style="color:#525363">Video library expands across money pages; LP revamp continues on confirmed scope.</span></div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:13px 15px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;color:#CC8000">Efficiency</span><span style="color:#525363">Sandbox winners promoted to production; programmatic SEO enters if recovery is stable.</span></div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:8px;padding:13px 15px;font-size:13px"><span style="display:block;font-family:'Fira Code',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;color:#686876">Product support</span><span style="color:#525363">Amplification continues as integrated campaigns; feedback channel compounds.</span></div>
-</div>
-<div style="border:1.5px dashed #BEBFC5;border-radius:12px;padding:18px 20px;margin-top:12px;font-size:13.5px;color:#525363"><b style="color:#27283C;font-family:'Poppins',sans-serif">Q4 — planned in the Q3 review, from evidence.</b> The questions that will decide it:
-    <ul style="margin:8px 0 0 18px;padding:0">
-<li style="margin-bottom:4px">Which clusters recovered — and which needed a different play?</li>
-<li style="margin-bottom:4px">Did AI visibility translate into referral traffic and signups?</li>
-<li style="margin-bottom:4px">What did report #1 earn — links, mentions, citations, pipeline?</li>
-<li style="margin-bottom:4px">Which bets survived their kill dates, and which sandbox tactics graduated to production?</li>
-</ul>
-</div>
-<!-- DEPS + SUCCESS -->
-<div style="display:flex;align-items:baseline;gap:12px;margin:48px 0 14px">
-<h2 id="d-deps" style="font-family:'Poppins',sans-serif;font-size:26px;font-weight:600;letter-spacing:-0.25px;color:#27283C;margin:0">Dependencies &amp; success</h2>
-<span style="font-family:'Fira Code',monospace;font-size:11px;color:#686876;letter-spacing:.06em">what we need · how we'll know</span>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px">
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:16px 18px;font-size:13px">
-<h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin:0 0 8px">What we need</h3>
-<ul style="list-style:none;margin:0;padding:0">
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><b style="color:#27283C">Tools (GEO/Video)</b> (ask goes to Rijo week 1)</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><b style="color:#27283C">Alconost</b> — translated-video scripts and localisation workflow</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><b style="color:#27283C">R&amp;D</b> — workflow &amp; experiment setup, data points</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><b style="color:#27283C">Legal + data-team sign-off</b> — research programme (the long pole)</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><b style="color:#27283C">Data access</b> — qualified-signups baseline</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><b style="color:#27283C">Engineering</b> — technical-SEO fixes; LP builds/forms; landing-page builds and implementation support</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><b style="color:#27283C">Agency (Team 2)</b> — Wikipedia, content push, campaign collabs</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><b style="color:#27283C">Ad hoc capacity</b> — 30% buffer for urgent/high-impact cross-team work; requests beyond this need trade-off or leadership reprioritisation</li>
-<li style="padding:5px 0;color:#525363"><b style="color:#27283C">Growth Team 3 / Product</b> — agent-ready website initiative, cluster-relevant documentation inputs, developer reqs, design</li>
-</ul>
-</div>
-<div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;padding:16px 18px;font-size:13px">
-<h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin:0 0 8px">Q2 succeeded if…</h3>
-<ul style="list-style:none;margin:0;padding:0">
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><span style="font-family:'Fira Code',monospace;color:#2DAD70;margin-right:7px;font-size:11px">V</span>Priority clusters recovered; migration governed; entity audit adopted</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><span style="font-family:'Fira Code',monospace;color:#2DAD70;margin-right:7px;font-size:11px">V</span>AI Search reporting live; SoA moving <span style="font-family:'Fira Code',monospace">20% → 26%</span>; developer/agent-readiness topics scoped and started</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><span style="font-family:'Fira Code',monospace;color:#2DAD70;margin-right:7px;font-size:11px">C</span>Every workstream has a paid-conversion path; money pages retrofitted, priority LPs scoped, prune complete; conversion video on 2–3 pages; translated-video script workflow set; first lead-gen live</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><span style="font-family:'Fira Code',monospace;color:#2DAD70;margin-right:7px;font-size:11px">AU</span>Research topic, sign-off, methodology locked</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><span style="font-family:'Fira Code',monospace;color:#2DAD70;margin-right:7px;font-size:11px">AU</span>Voice guide shipped; channels on their treatments; V3 POV pieces distributed; Reddit presence started; Wikipedia kicked off</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><span style="font-family:'Fira Code',monospace;color:#2DAD70;margin-right:7px;font-size:11px">A</span>Generator funnel on target; plugin listing + md root live; priority acquisition LPs scoped/started</li>
-<li style="padding:5px 0;border-bottom:1px solid #F4F5F7;color:#525363"><span style="font-family:'Fira Code',monospace;color:#2DAD70;margin-right:7px;font-size:11px">E</span>Agents standing up per role; staging + sandbox live; bets on kill dates</li>
-<li style="padding:5px 0;color:#525363"><span style="font-family:'Fira Code',monospace;color:#2DAD70;margin-right:7px;font-size:11px">B</span>Every release amplified as a campaign; feedback channel running</li>
-</ul>
-</div>
-</div>
-<footer style="margin-top:44px;padding-top:16px;border-top:1px solid #BEBFC5;font-size:12px;color:#686876;display:flex;gap:14px;flex-wrap:wrap">
-<span>CookieYes · Growth - Team 1 Roadmap FY2026–27</span>
-<span style="font-family:'Fira Code',monospace">classified by tier · Track A / Track B separated</span>
-<span style="margin-left:auto">Companions: Leadership Review · Ownership Mapping · Owner Briefs</span>
-</footer>
-</section>
-</div>
-</div>
-</div>
 </x-dc>
-<script data-dc-script="" data-props='{
-  "expandAllItems": {"editor": "boolean", "default": false, "tsType": "boolean", "section": "Reading mode"},
-  "showTierSpine": {"editor": "boolean", "default": true, "tsType": "boolean", "section": "Reading mode"}
-}' type="text/x-dc">
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;defaultTab&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;summary&quot;, &quot;detail&quot;, &quot;okrs&quot;], &quot;default&quot;: &quot;summary&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Reading mode&quot;},
+  &quot;expandAllItems&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Reading mode&quot;},
+  &quot;showTierSpine&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Reading mode&quot;}
+}">
 class Component extends DCLogic {
+  state = { tab: null };
+
+  getTab() {
+    if (this.state.tab) return this.state.tab;
+    try {
+      const s = localStorage.getItem('cy-roadmap-tab');
+      if (s === 'summary' || s === 'detail' || s === 'okrs') return s;
+    } catch (e) {}
+    return this.props.defaultTab ?? 'summary';
+  }
+
+  setTab(t) {
+    try { localStorage.setItem('cy-roadmap-tab', t); } catch (e) {}
+    this.setState({ tab: t });
+  }
+
   renderVals() {
+    const tab = this.getTab();
+    const on = '#1863DC', off = 'transparent', onC = '#FFFFFF', offC = '#525363';
     return {
+      isSummary: tab === 'summary',
+      isDetail: tab === 'detail',
+      isOkrs: tab === 'okrs',
+      showSummary: () => this.setTab('summary'),
+      showDetail: () => this.setTab('detail'),
+      showOkrs: () => this.setTab('okrs'),
+      sumBg: tab === 'summary' ? on : off, sumC: tab === 'summary' ? onC : offC,
+      detBg: tab === 'detail' ? on : off, detC: tab === 'detail' ? onC : offC,
+      okrBg: tab === 'okrs' ? on : off, okrC: tab === 'okrs' ? onC : offC,
       allOpen: this.props.expandAllItems ?? false,
       showSpine: this.props.showTierSpine ?? true
     };
