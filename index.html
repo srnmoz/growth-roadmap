@@ -1,18 +1,13 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+
   <title>CookieYes · Growth - Team 1 Roadmap FY2026–27</title>
-  <link rel="stylesheet" href="_ds/cookieyes-design-system-ea9e50a1-c6df-45ca-88a1-76831a816630/colors_and_type.css">
-  <link rel="stylesheet" href="_ds/cookieyes-design-system-ea9e50a1-c6df-45ca-88a1-76831a816630/styles.css">
-  <script src="_ds/cookieyes-design-system-ea9e50a1-c6df-45ca-88a1-76831a816630/_ds_bundle.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     html,body{margin:0;padding:0;background:#F6F8FA}
     body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -27,42 +22,42 @@
     .cy-tbl tr:last-child td{border-bottom:0}
     .cy-tbl td b{color:#27283C}
     @media print{ .cy-spine{position:absolute} details{break-inside:avoid} body{background:#fff} .cy-tabbar{display:none} }
+  
+    .cy-panel{display:none}
+    .cy-panel.active{display:block}
+    .cy-tab{background:transparent;color:#525363}
+    .cy-tab.active{background:#1863DC!important;color:#fff!important}
+    .cy-tabbar button:hover{background:#ECF3FC;color:#1863DC}
+    .cy-tabbar button.active:hover{background:#1863DC;color:#fff}
+    @media (max-width:760px){
+      div[style*="grid-template-columns:1.4fr 1fr .8fr"],div[style*="grid-template-columns:1fr 1fr"],div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important}
+      .cy-tabbar{position:static!important;margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important}
+      .cy-tabbar>div{display:flex!important;flex-wrap:wrap!important;width:100%!important}
+      .cy-tabbar button{flex:1 1 160px!important}
+    }
+
   </style>
-</helmet>
 
-<template id="__bundler_thumbnail" data-bg-color="#1863DC">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#1863DC"/>
-    <circle cx="600" cy="300" r="120" fill="#ffffff"/>
-    <circle cx="560" cy="270" r="18" fill="#1863DC"/>
-    <circle cx="640" cy="300" r="15" fill="#1863DC"/>
-    <circle cx="585" cy="340" r="13" fill="#1863DC"/>
-    <rect x="360" y="500" width="480" height="26" rx="13" fill="#ffffff"/>
-    <rect x="360" y="556" width="360" height="26" rx="13" fill="#ffffff" opacity="0.7"/>
-    <rect x="360" y="612" width="420" height="26" rx="13" fill="#ffffff" opacity="0.5"/>
-  </svg>
-</template>
-
-<sc-if value="{{ showSpine }}" hint-placeholder-val="{{ true }}">
-  <div aria-hidden="true" style="position:fixed;left:0;top:0;bottom:0;width:5px;display:flex;flex-direction:column;z-index:50" class="cy-spine">
+</head>
+<body>
+<div aria-hidden="true" style="position:fixed;left:0;top:0;bottom:0;width:5px;display:flex;flex-direction:column;z-index:50" class="cy-spine">
     <div style="flex:1;background:#1863DC"></div>
     <div style="flex:1;background:#57BABD"></div>
     <div style="flex:1;background:#2DAD70"></div>
     <div style="flex:1;background:#955AE8"></div>
     <div style="flex:1;background:#CC8000"></div>
   </div>
-</sc-if>
 
 <div style="font-family:'Inter',system-ui,sans-serif;color:#3D3E50;font-size:14.5px;line-height:1.6;max-width:920px;margin:0 auto;padding:0 28px 72px;position:relative">
 
   <!-- HEADER -->
   <header style="padding:44px 0 0">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
-      <img src="assets/cookieyes-wordmark.svg" alt="CookieYes" style="height:23px;width:auto">
+      <img src="https://assets.cookieyes.com/cookieyes_logo_9fa85f5b07.svg" alt="CookieYes" style="height:23px;width:auto">
       <span style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#525363">Growth · Team 1 Roadmap · FY2026–27</span>
     </div>
-    <h1 style="font-family:'Poppins',sans-serif;font-size:36px;font-weight:600;line-height:1.15;letter-spacing:-0.5px;color:#27283C;margin:0 0 12px;max-width:720px">Growth roadmap — organised the way it's measured</h1>
-    <p style="color:#525363;font-size:15px;line-height:1.65;max-width:680px;margin:0">Two tracks, five measured tiers, one north star. Q2 is detailed, Q3 is directional, Q4 stays open until the evidence is in.</p>
+    <h1 style="font-family:'Poppins',sans-serif;font-size:36px;font-weight:600;line-height:1.15;letter-spacing:-0.5px;color:#27283C;margin:0 0 12px;max-width:720px">Growth Team 1 Roadmap 2026-27 + Q2 OKR</h1>
+    <p style="color:#525363;font-size:15px;line-height:1.65;max-width:680px;margin:0">Q2 in full detail, classified under the five measured tiers — with growth-initiated work clearly separated from product-management support. Q3 is directional; Q4 stays open until the evidence is in.</p>
 
     <!-- North star -->
     <div style="margin-top:24px;background:#1863DC;border-radius:12px;overflow:hidden">
@@ -89,15 +84,14 @@
   <!-- TABS -->
   <div class="cy-tabbar" style="position:sticky;top:0;z-index:40;margin:26px -28px 0;padding:12px 28px;background:rgba(246,248,250,0.9);backdrop-filter:blur(8px)">
     <div style="display:inline-flex;gap:4px;background:#fff;border:1px solid #E9E9EB;border-radius:10px;padding:4px">
-      <button onClick="{{ showSummary }}" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);background:{{ sumBg }};color:{{ sumC }};line-height:1.15">Summary<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Presentation view</span></button>
-      <button onClick="{{ showDetail }}" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);background:{{ detBg }};color:{{ detC }};line-height:1.15">Roadmap detail<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Track A, B &amp; tier work</span></button>
-      <button onClick="{{ showOkrs }}" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);background:{{ okrBg }};color:{{ okrC }};line-height:1.15">OKRs<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Metrics &amp; mapping</span></button>
+      <button type="button" class="cy-tab active" data-tab="summary" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);line-height:1.15">Summary<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Presentation view</span></button>
+      <button type="button" class="cy-tab" data-tab="detail" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);line-height:1.15">Roadmap detail<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Track A, B &amp; tier work</span></button>
+      <button type="button" class="cy-tab" data-tab="okrs" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);line-height:1.15">OKRs<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Metrics &amp; mapping</span></button>
     </div>
   </div>
 
   <!-- ============================ SUMMARY ============================ -->
-  <sc-if value="{{ isSummary }}" hint-placeholder-val="{{ true }}">
-  <div data-screen-label="Summary">
+  <section id="panel-summary" class="cy-panel active" data-screen-label="Summary">
 
     <!-- Two tracks -->
     <div style="margin-top:24px">
@@ -153,12 +147,10 @@
       <b style="color:#27283C;font-family:'Poppins',sans-serif;font-size:14px;display:block;margin-bottom:5px">Metric principle</b>
       North star is <b style="color:#27283C">$21M ARR</b>. Supporting Q2 org KR: a <b style="color:#27283C">+60% QoQ</b> increase in paid signups from organic / direct, from <b style="color:#27283C">6,653</b> to <b style="color:#27283C">10,645</b>. Every item carries a metric and a line to business impact; other OKR baselines stay blank until confirmed.
     </div>
-  </div>
-  </sc-if>
+  </section>
 
   <!-- ============================ ROADMAP DETAIL ============================ -->
-  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
-  <div data-screen-label="Roadmap detail">
+  <section id="panel-detail" class="cy-panel" data-screen-label="Roadmap detail">
 
     <!-- Runway -->
     <div style="display:grid;grid-template-columns:1.4fr 1fr .8fr;gap:12px;margin:24px 0 8px">
@@ -201,8 +193,8 @@
       <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> organic / direct paid signups <span style="font-family:'Fira Code',monospace">6,653 → 10,645 (+60% QoQ)</span> · generator policies <span style="font-family:'Fira Code',monospace">+40% QoQ</span> · plugin installs→signup baselined · priority LPs scoped &amp; started.</div>
     </div>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#1863DC">A1</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Generator sites</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">The organic side of the generator funnel — the most direct line to the $1M generator goal</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna</span>
@@ -214,8 +206,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#1863DC">A2</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">WP plugin channel</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Promoted from experiment — optimise the listing fronting our biggest install base, make it agent-readable</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya</span>
@@ -229,8 +221,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#1863DC">A3</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Acquisition landing pages</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Search-demand, product, platform, developer and event pages built to bring qualified signups</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna · Hari</span>
@@ -258,8 +250,8 @@
       <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> priority clusters ≥ pre-migration top-3 · SoA <span style="font-family:'Fira Code',monospace">20% → 26%</span> by Sep · AI Search reporting live monthly.</div>
     </div>
 
-    <details open="true" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details open style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#3E9598">V1</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">SEO &amp; search ecosystem</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Cluster-by-cluster recovery, migration governance, technical excellence</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Litto</span>
@@ -273,8 +265,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#3E9598">V2</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">AI visibility (GEO / AEO)</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Be cited where answers happen — AI Overviews, ChatGPT, Perplexity, Gemini</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Litto</span>
@@ -286,8 +278,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#3E9598">V3</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Developer &amp; agent-readiness content</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Content-led visibility for MCP, skills, connectors and agent-ready topics</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna · Shreya</span>
@@ -311,8 +303,8 @@
       <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> every workstream defines its path to paid outcomes · conversion video on 2–3 money pages · LP roadmap scoped · first lead-gen live. <i>Safna's items flex with her compliance-pod load — Shreya backs up.</i></div>
     </div>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#2DAD70">C1</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Money-page CRO &amp; conversion layer</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Recover and retrofit pages that attract demand; make A3 LPs convert once traffic arrives</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna → Shreya backup</span>
@@ -325,8 +317,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#2DAD70">C2</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Video that converts</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Converts on money pages, teaches and builds trust everywhere else</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Hari</span>
@@ -345,8 +337,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#2DAD70">C3</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Lead-gen resources</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Gated guides, templates, checklists — direct conversion assets for the owned audience</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna</span>
@@ -369,8 +361,8 @@
       <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> research topic + sign-off + methodology locked · newsletter <span style="font-family:'Fira Code',monospace">485 → ~1,500</span> · voice guide shipped · Wikipedia kicked off.</div>
     </div>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#955AE8">AU1</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Own research</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Citable reports on consent data only CookieYes has — the source journalists and AI assistants cite</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna</span>
@@ -382,8 +374,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#955AE8">AU2</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">PR &amp; newsletter</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Regulation-moment PR year-round; the Privacy Digest grown from 485 subscribers</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna</span>
@@ -395,8 +387,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#955AE8">AU3</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Brand voice &amp; social</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">One recognisable voice, then channels — each with one job and one metric</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Safna · Hari (IG)</span>
@@ -409,8 +401,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#955AE8">AU4</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Wikipedia presence</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Potentially a unified CookieYes page — entity authority that LLM answers cite heavily</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Shreya · Safna · Nidha · Litto</span>
@@ -433,8 +425,8 @@
       <div style="margin-top:9px;font-size:12.5px;color:#525363"><b style="color:#27283C">Q2 target:</b> ≥1 agent per role · hours-saved baseline set · staging + sandbox live · first validated tactics promoted.</div>
     </div>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#CC8000">E1</span>
         <span style="flex:1;min-width:0"><span style="display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">AI-assisted operations</span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">Every role runs ≥1 agent — hours move from execution to strategy and craft</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Whole team</span>
@@ -447,8 +439,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#CC8000">E2</span>
         <span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Staging test environment</span><span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;padding:2px 8px;border-radius:9999px;background:#FFF6E5;color:#CC8000">BET</span></span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">A sandbox where SEO / AIO patterns are validated before production</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Litto</span>
@@ -460,8 +452,8 @@
       </div>
     </details>
 
-    <details open="{{ allOpen }}" style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px" style-hover="background:#F1F6FD">
+    <details  style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;margin-bottom:10px;overflow:hidden">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 17px">
         <span style="font-family:'Fira Code',monospace;font-size:11px;font-weight:600;width:32px;flex:none;color:#CC8000">E3</span>
         <span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C">Next.js sandbox</span><span style="font-family:'Fira Code',monospace;font-size:10px;font-weight:600;padding:2px 8px;border-radius:9999px;background:#FFF6E5;color:#CC8000">BET</span></span><span style="display:block;font-size:12.5px;color:#686876;margin-top:1px">A live testbed for content + technical-SEO experiments — winners promoted to prod</span></span>
         <span style="font-size:11px;font-weight:600;white-space:nowrap;padding:3px 10px;border-radius:9999px;background:#ECF3FC;color:#1863DC;flex:none">Whole team</span>
@@ -532,12 +524,10 @@
         <li style="padding:8px 0;color:#525363"><b style="color:#27283C">Growth Team 3 / Product</b> — agent-ready website initiative, documentation inputs, developer reqs, design</li>
       </ul>
     </div>
-  </div>
-  </sc-if>
+  </section>
 
   <!-- ============================ OKRs ============================ -->
-  <sc-if value="{{ isOkrs }}" hint-placeholder-val="{{ false }}">
-  <div data-screen-label="OKRs">
+  <section id="panel-okrs" class="cy-panel" data-screen-label="OKRs">
 
     <div style="margin-top:24px;background:#F1F6FD;border:1px solid #D1E0F8;border-radius:12px;padding:16px 18px;font-size:13px;color:#525363;line-height:1.6">
       <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#686876;margin-bottom:6px">Draft · OKRs &amp; tier mapping · FY2026–27</div>
@@ -628,8 +618,7 @@
         </table>
       </div>
     </div>
-  </div>
-  </sc-if>
+  </section>
 
   <footer style="margin-top:44px;padding-top:16px;border-top:1px solid #E1E7EE;font-size:12px;color:#686876;display:flex;gap:14px;flex-wrap:wrap">
     <span>CookieYes · Growth - Team 1 Roadmap FY2026–27</span>
@@ -639,48 +628,30 @@
 
 </div>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
-  &quot;defaultTab&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;summary&quot;, &quot;detail&quot;, &quot;okrs&quot;], &quot;default&quot;: &quot;summary&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Reading mode&quot;},
-  &quot;expandAllItems&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Reading mode&quot;},
-  &quot;showTierSpine&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Reading mode&quot;}
-}">
-class Component extends DCLogic {
-  state = { tab: null };
 
-  getTab() {
-    if (this.state.tab) return this.state.tab;
-    try {
-      const s = localStorage.getItem('cy-roadmap-tab');
-      if (s === 'summary' || s === 'detail' || s === 'okrs') return s;
-    } catch (e) {}
-    return this.props.defaultTab ?? 'summary';
+<script>
+(function(){
+  const tabs = document.querySelectorAll('.cy-tab');
+  const panels = {
+    summary: document.getElementById('panel-summary'),
+    detail: document.getElementById('panel-detail'),
+    okrs: document.getElementById('panel-okrs')
+  };
+  function show(tab){
+    Object.keys(panels).forEach(function(key){
+      if (panels[key]) panels[key].classList.toggle('active', key === tab);
+    });
+    tabs.forEach(function(btn){ btn.classList.toggle('active', btn.dataset.tab === tab); });
+    try { localStorage.setItem('cy-roadmap-tab', tab); } catch(e) {}
   }
-
-  setTab(t) {
-    try { localStorage.setItem('cy-roadmap-tab', t); } catch (e) {}
-    this.setState({ tab: t });
-  }
-
-  renderVals() {
-    const tab = this.getTab();
-    const on = '#1863DC', off = 'transparent', onC = '#FFFFFF', offC = '#525363';
-    return {
-      isSummary: tab === 'summary',
-      isDetail: tab === 'detail',
-      isOkrs: tab === 'okrs',
-      showSummary: () => this.setTab('summary'),
-      showDetail: () => this.setTab('detail'),
-      showOkrs: () => this.setTab('okrs'),
-      sumBg: tab === 'summary' ? on : off, sumC: tab === 'summary' ? onC : offC,
-      detBg: tab === 'detail' ? on : off, detC: tab === 'detail' ? onC : offC,
-      okrBg: tab === 'okrs' ? on : off, okrC: tab === 'okrs' ? onC : offC,
-      allOpen: this.props.expandAllItems ?? false,
-      showSpine: this.props.showTierSpine ?? true
-    };
-  }
-}
-
+  tabs.forEach(function(btn){ btn.addEventListener('click', function(){ show(btn.dataset.tab); }); });
+  let saved = 'summary';
+  try {
+    const s = localStorage.getItem('cy-roadmap-tab');
+    if (s === 'summary' || s === 'detail' || s === 'okrs') saved = s;
+  } catch(e) {}
+  show(saved);
+})();
 </script>
 </body>
 </html>
