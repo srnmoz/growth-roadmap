@@ -110,7 +110,9 @@
     body.cy-presenting .cy-tabbar,
     body.cy-presenting footer,
     body.cy-presenting #panel-summary,
-    body.cy-presenting #panel-detail{display:none!important}
+    body.cy-presenting #panel-detail,
+    body.cy-presenting #panel-monthly,
+    body.cy-presenting #panel-q3{display:none!important}
     body.cy-presenting #panel-okrs{display:block!important}
     body.cy-presenting > div[style*="max-width:920px"]{max-width:none!important;padding:0!important;margin:0!important}
     body.cy-presenting .okr-wrap{max-width:1120px;margin:0 auto;padding:64px 42px 92px;box-sizing:border-box}
@@ -145,6 +147,7 @@
 
     @media (max-width:760px){
       div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important}
+      div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
     }
 
   </style>
@@ -198,6 +201,8 @@
       <button type="button" class="cy-tab active" data-tab="summary" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);line-height:1.15">Summary<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Presentation view</span></button>
       <button type="button" class="cy-tab" data-tab="detail" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);line-height:1.15">Roadmap detail<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Track A, B &amp; tier work</span></button>
       <button type="button" class="cy-tab" data-tab="okrs" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);line-height:1.15">OKRs<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Metrics &amp; mapping</span></button>
+      <button type="button" class="cy-tab" data-tab="monthly" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);line-height:1.15">Monthly mapping<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Q2 delivery plan</span></button>
+      <button type="button" class="cy-tab" data-tab="q3" style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-align:left;padding:8px 16px;border:none;border-radius:7px;cursor:pointer;transition:background 160ms cubic-bezier(0.4,0,0.2,1);line-height:1.15">Q3 direction<span style="display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;opacity:.8;margin-top:2px">Prototype &amp; validate</span></button>
     </div>
   </div>
 
@@ -883,6 +888,169 @@
   </section>
 
 
+
+  <!-- ============================ MONTHLY DELIVERY MAPPING ============================ -->
+  <section id="panel-monthly" class="cy-panel" data-screen-label="Monthly mapping">
+    <div style="margin-top:24px;background:#fff;border:1px solid #E1E7EE;border-radius:14px;overflow:hidden">
+      <div style="padding:18px 20px;background:#F1F6FD;border-bottom:1px solid #D1E0F8">
+        <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#686876;margin-bottom:6px">Q2 delivery mapping</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:600;color:#27283C;margin:0 0 8px;line-height:1.25">July locks, August executes, September closes</h2>
+        <p style="font-size:13px;color:#525363;line-height:1.6;margin:0;max-width:760px">This is a reasonable delivery map for the OKRs, not a forced monthly target split. July is setup-heavy, August is execution-heavy, and September is for closing, measurement and Q3 decisions.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #F0F2F5">
+        <div style="padding:15px 16px;border-right:1px solid #F0F2F5;background:#fff">
+          <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1863DC;margin-bottom:4px">July</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin-bottom:4px">Lock the system</div>
+          <div style="font-size:12.5px;color:#525363;line-height:1.45">Finalise baselines, owners, trackers, priority lists, definitions and the first execution plan.</div>
+        </div>
+        <div style="padding:15px 16px;border-right:1px solid #F0F2F5;background:#fff">
+          <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2DAD70;margin-bottom:4px">August</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin-bottom:4px">Execute and test</div>
+          <div style="font-size:12.5px;color:#525363;line-height:1.45">Ship core work, run experiments, activate agents, start PR, social and search execution.</div>
+        </div>
+        <div style="padding:15px 16px;background:#fff">
+          <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#955AE8;margin-bottom:4px">September</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin-bottom:4px">Close and measure</div>
+          <div style="font-size:12.5px;color:#525363;line-height:1.45">Complete remaining work, measure KR progress, document learnings and decide Q3 prototypes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px">
+      <h2 style="font-family:'Poppins',sans-serif;font-size:21px;font-weight:600;color:#27283C;margin:0 0 12px">Monthly delivery by OKR</h2>
+      <div style="background:#fff;border:1px solid #E9E9EB;border-radius:12px;overflow:hidden">
+        <table class="cy-tbl">
+          <thead>
+            <tr><th style="width:17%">KR</th><th style="width:27%">July</th><th style="width:28%">August</th><th>September</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>KR 1.1</b><br><span style="font-size:11px;color:#686876">ARR contribution</span></td>
+              <td>Confirm Team 1 FY ARR goal as <b>$XM</b> and agree the Q2 contribution logic.</td>
+              <td>Monitor organic/direct ARR contribution weekly and identify contributing surfaces.</td>
+              <td>Report Q2 ARR contribution and gap. Do not over-optimise until the target is locked.</td>
+            </tr>
+            <tr>
+              <td><b>KR 1.2</b><br><span style="font-size:11px;color:#686876">Paid signups</span></td>
+              <td>Confirm Q1 actual <b>6,653</b> and Q2 target <b>10,645</b> in Stripe. Set run-rate tracker.</td>
+              <td>Review run-rate weekly and push priority acquisition / conversion work.</td>
+              <td>Confirm whether Q2 achieved <b>10,645</b> organic/direct paid subscriptions.</td>
+            </tr>
+            <tr>
+              <td><b>KR 1.3</b><br><span style="font-size:11px;color:#686876">Search Discovery</span></td>
+              <td>Freeze the agreed Q2 Search Discovery plan: priority clusters, developer / agent-readiness topics and measurement sources.</td>
+              <td>Execute the main search discovery actions. Aim for meaningful progress, not full closure.</td>
+              <td>Measure completion against the target: <b>80%</b> of agreed Q2 Search Discovery goals.</td>
+            </tr>
+            <tr>
+              <td><b>KR 1.4</b><br><span style="font-size:11px;color:#686876">CMS / platform docs</span></td>
+              <td>Pick priority CMS/platform documentation pages and confirm baseline plus ref attribution.</td>
+              <td>Update selected pages with clearer CTA paths, internal links and tracking.</td>
+              <td>Measure QoQ conversion movement and document what worked.</td>
+            </tr>
+            <tr>
+              <td><b>KR 2.1</b><br><span style="font-size:11px;color:#686876">AI Search definition</span></td>
+              <td>Draft AI Search definition, prompt set, tracker logic and ownership.</td>
+              <td>Review, refine and test the framework once.</td>
+              <td>Complete the signed-off definition document.</td>
+            </tr>
+            <tr>
+              <td><b>KR 2.2</b><br><span style="font-size:11px;color:#686876">PR campaigns</span></td>
+              <td>Lock 3 campaign themes and tracker. Push only 1 campaign in July if ready.</td>
+              <td>Push 1-2 campaigns and track citations / backlinks.</td>
+              <td>Complete remaining campaign push and citation / backlink QA.</td>
+            </tr>
+            <tr>
+              <td><b>KR 2.3</b><br><span style="font-size:11px;color:#686876">Brand / social cadence</span></td>
+              <td>Build channel-wise calendar and cadence, including emerging-trend content themes.</td>
+              <td>Start publishing consistently across priority channels.</td>
+              <td>Review cadence, engagement and what should continue in Q3.</td>
+            </tr>
+            <tr>
+              <td><b>KR 2.4</b><br><span style="font-size:11px;color:#686876">Research asset</span></td>
+              <td>Finalise topic, data feasibility and approval path.</td>
+              <td>Lock methodology, pull data and start draft.</td>
+              <td>Complete research lock: topic, methodology, sign-off, data, draft and distribution plan.</td>
+            </tr>
+            <tr>
+              <td><b>KR 3.1</b><br><span style="font-size:11px;color:#686876">Adopted workflows</span></td>
+              <td>Create experiment register and list 10 structured experiments. Start with 2-3 practical ones.</td>
+              <td>Run experiments and shortlist workflows worth adopting.</td>
+              <td>Promote <b>4 validated experiments</b> into documented, adopted workflows or skills.</td>
+            </tr>
+            <tr>
+              <td><b>KR 3.2</b><br><span style="font-size:11px;color:#686876">Agents per role</span></td>
+              <td>Define one useful agent per role and assign owners.</td>
+              <td>Every role has <b>1 live agent by 31 Aug</b> with use case and recurring usage.</td>
+              <td>Measure usage, time saved or quality improvement. Decide what becomes permanent.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px">
+      <div style="background:#fff;border:1px solid #E9E9EB;border-left:4px solid #1863DC;border-radius:12px;padding:15px 18px;font-size:13px;color:#525363;line-height:1.6">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin:0 0 7px">Reasonable guardrails</h3>
+        <p style="margin:0 0 7px">Do not force equal monthly targets. July is setup-heavy by design.</p>
+        <p style="margin:0 0 7px">Do not make every idea a deliverable. Track only KR-linked work or Q3 prototype candidates.</p>
+        <p style="margin:0">Do not treat PR, research, AI Search and agents as full Q2 launches. For some, Q2 success is definition, lock, first execution and proof of direction.</p>
+      </div>
+      <div style="background:#F1F6FD;border:1px solid #D1E0F8;border-radius:12px;padding:15px 18px;font-size:13px;color:#525363;line-height:1.6">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin:0 0 7px">Clean Q2 story</h3>
+        <p style="margin:0 0 6px"><b style="color:#27283C">July:</b> lock direction and measurement.</p>
+        <p style="margin:0 0 6px"><b style="color:#27283C">August:</b> execute and test.</p>
+        <p style="margin:0"><b style="color:#27283C">September:</b> close, measure and decide what scales into Q3.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================ Q3 DIRECTIONAL OKRs ============================ -->
+  <section id="panel-q3" class="cy-panel" data-screen-label="Q3 direction">
+    <div style="margin-top:24px;background:#fff;border:1px solid #E1E7EE;border-radius:14px;overflow:hidden">
+      <div style="padding:18px 20px;background:#F1F6FD;border-bottom:1px solid #D1E0F8">
+        <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#686876;margin-bottom:6px">Q3 directional OKRs</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:600;color:#27283C;margin:0 0 8px;line-height:1.25">Prototype Q2 learnings and prepare Q4 scale</h2>
+        <p style="font-size:13px;color:#525363;line-height:1.6;margin:0;max-width:760px">Q3 is not the full implementation quarter. It is where Team 1 validates the strongest Q2 bets, proves which systems deserve scale, and prepares the Q4 implementation shortlist.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #F0F2F5">
+        <div style="padding:15px 16px;border-right:1px solid #F0F2F5;background:#fff">
+          <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1863DC;margin-bottom:4px">Search and acquisition</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin-bottom:4px">Prototype scalable organic/direct growth plays</div>
+          <ul style="margin:8px 0 0 17px;padding:0;font-size:12.5px;color:#525363;line-height:1.55">
+            <li>Set Q3 paid-signup target from Q2 actuals</li>
+            <li>Prototype priority SEO, CMS/platform, and developer/agent-readiness plays</li>
+            <li>Test conversion improvements on priority acquisition surfaces</li>
+          </ul>
+        </div>
+        <div style="padding:15px 16px;border-right:1px solid #F0F2F5;background:#fff">
+          <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#955AE8;margin-bottom:4px">Brand and authority</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin-bottom:4px">Turn authority work into citable assets</div>
+          <ul style="margin:8px 0 0 17px;padding:0;font-size:12.5px;color:#525363;line-height:1.55">
+            <li>Publish and distribute Research Asset #1</li>
+            <li>Earn quality citations/referring domains</li>
+            <li>Run monthly AI Search tracking</li>
+            <li>Move Wikipedia/entity work to prototype stage</li>
+          </ul>
+        </div>
+        <div style="padding:15px 16px;background:#fff">
+          <div style="font-family:'Fira Code',monospace;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CC8000;margin-bottom:4px">Agentic workflows</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#27283C;margin-bottom:4px">Scale useful workflows into team systems</div>
+          <ul style="margin:8px 0 0 17px;padding:0;font-size:12.5px;color:#525363;line-height:1.55">
+            <li>Scale adopted Q2 workflows</li>
+            <li>Improve live role-based agents</li>
+            <li>Create Q4 implementation shortlist</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;background:#F1F6FD;border:1px solid #D1E0F8;border-radius:12px;padding:15px 18px;font-size:13px;color:#525363;line-height:1.6">
+      <b style="font-family:'Poppins',sans-serif;color:#27283C">Clean Q3 story:</b> prototype and validate. Q4 is where the proven work gets implemented and scaled.
+    </div>
+  </section>
+
   <footer style="margin-top:44px;padding-top:16px;border-top:1px solid #E1E7EE;font-size:12px;color:#686876;display:flex;gap:14px;flex-wrap:wrap">
     <span>CookieYes · Growth - Team 1 Roadmap FY2026–27</span>
     <span style="font-family:'Fira Code',monospace">Track A / Track B · classified by tier</span>
@@ -898,7 +1066,9 @@
   const panels = {
     summary: document.getElementById('panel-summary'),
     detail: document.getElementById('panel-detail'),
-    okrs: document.getElementById('panel-okrs')
+    okrs: document.getElementById('panel-okrs'),
+    monthly: document.getElementById('panel-monthly'),
+    q3: document.getElementById('panel-q3')
   };
   function show(tab){
     Object.keys(panels).forEach(function(key){
@@ -911,7 +1081,7 @@
   let saved = 'summary';
   try {
     const s = localStorage.getItem('cy-roadmap-tab');
-    if (s === 'summary' || s === 'detail' || s === 'okrs') saved = s;
+    if (s === 'summary' || s === 'detail' || s === 'okrs' || s === 'monthly' || s === 'q3') saved = s;
   } catch(e) {}
   show(saved);
 })();
