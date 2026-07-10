@@ -96,6 +96,52 @@
       .okr-line{grid-template-columns:1fr;gap:2px}
     }
 
+
+
+    /* Presentation mode: keyboard-first, meeting-friendly */
+    .okr-present-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 14px}
+    .okr-present-btn{font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;color:#fff;background:#1863DC;border:0;border-radius:9999px;padding:8px 14px;cursor:pointer;box-shadow:0 2px 8px rgba(24,99,220,.18)}
+    .okr-present-btn:hover{background:#134FB0}
+    .okr-present-help{font-size:12px;color:#686876}
+    .okr-present-controls{display:none}
+    body.cy-presenting{background:#0E1726;overflow:hidden}
+    body.cy-presenting .cy-spine,
+    body.cy-presenting header,
+    body.cy-presenting .cy-tabbar,
+    body.cy-presenting footer,
+    body.cy-presenting #panel-summary,
+    body.cy-presenting #panel-detail{display:none!important}
+    body.cy-presenting #panel-okrs{display:block!important}
+    body.cy-presenting > div[style*="max-width:920px"]{max-width:none!important;padding:0!important;margin:0!important}
+    body.cy-presenting .okr-wrap{max-width:1120px;margin:0 auto;padding:64px 42px 92px;box-sizing:border-box}
+    body.cy-presenting .okr-slide{display:none!important}
+    body.cy-presenting .okr-slide.is-present-slide{display:block!important;min-height:calc(100vh - 180px);box-sizing:border-box}
+    body.cy-presenting .okr-hero,
+    body.cy-presenting .okr-note-grid,
+    body.cy-presenting .okr-alert,
+    body.cy-presenting .okr-obj,
+    body.cy-presenting .okr-table-card{box-shadow:0 20px 70px rgba(0,0,0,.35);border-color:#D1E0F8}
+    body.cy-presenting .okr-hero{margin-top:8vh}
+    body.cy-presenting .okr-note-grid{background:#fff;border:1px solid #E1E7EE;border-radius:14px;padding:16px;grid-template-columns:1fr 1fr!important}
+    body.cy-presenting .okr-alert{font-size:18px;line-height:1.65;padding:28px 32px;margin-top:14vh}
+    body.cy-presenting .okr-obj-title{font-size:30px;line-height:1.2}
+    body.cy-presenting .okr-kr{grid-template-columns:138px 1fr;padding:16px 18px}
+    body.cy-presenting .okr-line{font-size:16px;line-height:1.6;grid-template-columns:118px 1fr}
+    body.cy-presenting .okr-nav,
+    body.cy-presenting .okr-present-row{display:none!important}
+    body.cy-presenting .okr-present-controls{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:9999;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.96);border:1px solid #D1E0F8;border-radius:9999px;padding:8px 10px;box-shadow:0 8px 30px rgba(0,0,0,.24)}
+    .okr-present-controls button{font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;border:1px solid #E1E7EE;background:#fff;color:#27283C;border-radius:9999px;padding:7px 11px;cursor:pointer}
+    .okr-present-controls button:hover{background:#ECF3FC;color:#1863DC}
+    .okr-present-count{font-family:'Fira Code',monospace;font-size:12px;font-weight:600;color:#525363;padding:0 8px;white-space:nowrap}
+    @media (max-width:760px){
+      body.cy-presenting .okr-wrap{padding:34px 18px 86px}
+      body.cy-presenting .okr-note-grid{grid-template-columns:1fr!important}
+      body.cy-presenting .okr-obj-title{font-size:22px}
+      body.cy-presenting .okr-kr{grid-template-columns:1fr}
+      body.cy-presenting .okr-line{grid-template-columns:1fr;font-size:14px}
+      .okr-present-help{display:block;width:100%}
+    }
+
   </style>
 
 </head>
@@ -611,6 +657,11 @@
         <a href="#okr-lock">Numbers to lock</a>
       </div>
 
+      <div class="okr-present-row">
+        <button type="button" class="okr-present-btn" id="okr-present-start">Present OKRs</button>
+        <span class="okr-present-help">Fullscreen-style review mode. Use arrow keys or Space. Esc exits.</span>
+      </div>
+
       <div class="okr-note-grid">
         <div class="okr-note"><b>Lagging KR:</b> the outcome we want. Slower to move, influenced by many factors, and confirms success after the fact.</div>
         <div class="okr-note"><b>Leading KR:</b> the input we control. Faster to act on and useful for steering progress during the quarter.</div>
@@ -642,7 +693,7 @@
           <div class="okr-kr">
             <div class="okr-kr-side"><div class="okr-kr-id">KR 1.2</div><div class="okr-kr-name">Paid signups</div><span class="okr-chip okr-chip-purple">Aspirational</span><span class="okr-chip okr-chip-amber">Lagging</span></div>
             <div class="okr-kr-main">
-              <div class="okr-line"><div class="okr-line-label">Target</div><div>Achieve <b>10,645 organic/direct paid subscriptions in Q2</b>, up from <b>6,653 in Q1.</b>.</div></div>
+              <div class="okr-line"><div class="okr-line-label">Target</div><div>Grow organic/direct paid signups from <b>6,653 to 10,645</b>.</div></div>
               <div class="okr-line"><div class="okr-line-label">Measure / source</div><div><b>Stripe</b> new-paid-subscription count, attributed to organic/direct.</div></div>
             </div>
           </div>
@@ -744,6 +795,13 @@
           </tbody>
         </table>
       </div>
+
+      <div class="okr-present-controls" aria-label="Presentation controls">
+        <button type="button" id="okr-present-prev">Prev</button>
+        <span class="okr-present-count" id="okr-present-count">1 / 1</span>
+        <button type="button" id="okr-present-next">Next</button>
+        <button type="button" id="okr-present-exit">Exit</button>
+      </div>
     </div>
   </section>
 
@@ -780,6 +838,61 @@
   } catch(e) {}
   show(saved);
 })();
+
+
+(function(){
+  const body = document.body;
+  const okrPanel = document.getElementById('panel-okrs');
+  const start = document.getElementById('okr-present-start');
+  const prev = document.getElementById('okr-present-prev');
+  const next = document.getElementById('okr-present-next');
+  const exit = document.getElementById('okr-present-exit');
+  const count = document.getElementById('okr-present-count');
+  if (!okrPanel || !start) return;
+
+  const slides = Array.prototype.slice.call(okrPanel.querySelectorAll('.okr-hero, .okr-note-grid, .okr-alert, .okr-obj, .okr-table-card'));
+  slides.forEach(function(slide){ slide.classList.add('okr-slide'); });
+  let index = 0;
+
+  function update(){
+    slides.forEach(function(slide, i){ slide.classList.toggle('is-present-slide', i === index); });
+    if (count) count.textContent = (index + 1) + ' / ' + slides.length;
+  }
+  function enter(){
+    const okrTab = document.querySelector('.cy-tab[data-tab="okrs"]');
+    if (okrTab) okrTab.click();
+    index = 0;
+    body.classList.add('cy-presenting');
+    update();
+    try {
+      if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+    } catch(e) {}
+  }
+  function leave(){
+    body.classList.remove('cy-presenting');
+    slides.forEach(function(slide){ slide.classList.remove('is-present-slide'); });
+    try {
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen();
+    } catch(e) {}
+  }
+  function go(delta){
+    if (!body.classList.contains('cy-presenting')) return;
+    index = Math.max(0, Math.min(slides.length - 1, index + delta));
+    update();
+  }
+
+  start.addEventListener('click', enter);
+  if (prev) prev.addEventListener('click', function(){ go(-1); });
+  if (next) next.addEventListener('click', function(){ go(1); });
+  if (exit) exit.addEventListener('click', leave);
+  document.addEventListener('keydown', function(e){
+    if (!body.classList.contains('cy-presenting')) return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter' || e.key === 'PageDown') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowLeft' || e.key === 'Backspace' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
+    if (e.key === 'Escape') leave();
+  });
+})();
+
 </script>
 </body>
 </html>
